@@ -28,7 +28,7 @@ services:
     volumes:
       - ./halo2:/root/.halo2
     ports:
-      - "8090:8090"
+      - "$port:8090"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8090/actuator/health/readiness"]
       interval: 30s
