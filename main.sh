@@ -41,40 +41,9 @@ blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
 
-#Docker及Docker-compose一键安装脚本
-function dockersh(){
-wget -O docker.sh https://raw.githubusercontent.com/WJQSERVER/shell/main/docker.sh && chmod +x docker.sh && clear && ./docker.sh
-}
-
-#SWAP一键脚本
-function swapsh(){
-wget -O swap.sh https://raw.githubusercontent.com/WJQSERVER/shell/main/swap.sh && chmod +x swap.sh && clear && ./swap.sh
-}
-
-#Nginx Proxy Manager一键部署脚本
-function npmsh(){
-wget -O nginxproxymanager.sh https://raw.githubusercontent.com/WJQSERVER/shell/main/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && clear && ./nginxproxymanager.sh
-}
-
-#Portainer中文版一键部署
-function portainersh(){
-docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /dockerData/portainer:/data --restart=always --name portainer 6053537/portainer-ce:latest
-echo "可以通过 http://<服务器IP>:9000 访问 Portainer。"
-}
-
-#网络信息查看
-function ipsh(){
-wget -O ipsh.sh https://raw.githubusercontent.com/WJQSERVER/shell/main/ipsh.sh && chmod +x ipsh.sh && clear && ./ipsh.sh
-}
-
-#三网回程线路测试
-function 3mtr-back(){
-curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
-}
-
-#三网测速
-function 3speedtest(){
-bash <(curl -Lso- https://git.io/superspeed)
+#网络侧信息
+function networkinfo(){
+wget -O networkinfo.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/networkinfo.sh  && chmod +x networkinfo.sh && clear && ./networkinfo.sh
 }
 
 #主菜单
@@ -124,7 +93,7 @@ function start_menu(){
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           ipsh
+           networkinfo
 	;;
 	11 )
             dockersh
