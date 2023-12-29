@@ -81,6 +81,46 @@ function ufw-install(){
 wget -O ufw-install.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/ufw-install.sh && chmod +x ufw-install.sh && clear && ./ufw-install.sh
 }
 
+#nginx图形化面板一键安装21
+function nginxproxymanager(){
+wget -O nginxproxymanager.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
+}
+
+#docker图形化管理面板22
+function portainer(){
+wget -O portainer.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/portainer.sh && chmod +x portainer.sh && ./portainer.sh
+}
+
+#uptime kuma部署23
+function uptime(){
+wget -O uptime.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/uptime.sh && chmod +x uptime.sh && ./uptime.sh
+}
+
+#speedtest-x部署24
+function speedtest-x(){
+wget -O speedtest-x.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
+}
+
+#青龙面板部署25
+function qinglong(){
+wget -O qinglong.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
+}
+
+#serverstatus探针部署26
+function serverstatus(){
+wget -O serverstatus.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
+}
+
+#wordpress部署31
+function wordpress(){
+wget -O wordpress.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/wordpress.sh && chmod +x wordpress.sh && ./wordpress.sh
+}
+
+#halo部署32
+function halo(){
+wget -O halo.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/halo.sh && chmod +x halo.sh && ./halo.sh
+}
+
 #主菜单
 function start_menu(){
     clear
