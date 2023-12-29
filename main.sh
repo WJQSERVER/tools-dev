@@ -67,7 +67,6 @@ curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sS
 }
 
 #三网测速6
-#三网测速
 function 3speedtest(){
 bash <(curl -Lso- https://git.io/superspeed)
 }
