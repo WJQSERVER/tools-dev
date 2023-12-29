@@ -125,15 +125,6 @@ function start_menu(){
         1 )
            ipsh
 	;;
-        2 )
-           iptsh
-	;;
-        3 )
-           speedtest-linux
-	;;
-        4 )
-           clonesh
-        ;;
 	11 )
             dockersh
 	;;    
