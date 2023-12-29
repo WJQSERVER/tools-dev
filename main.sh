@@ -1,11 +1,12 @@
 #! /bin/bash
 # By WJQSERVER-STUDIO_WJQSERVER
-#https://github.com/WJQSERVER/shell
+#https://github.com/WJQSERVER/tools-dev
 
 # 显示免责声明
 echo "免责声明：请阅读并同意以下条款才能继续使用本程序。"
 echo "本程序仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo "使用本程序所造成的任何损失或损害，作者不承担任何责任。"
+echo "当前版本为V.0.1-dev,DEV版本不保证兼容性和可用性。"
 
 # 显示确认提示
 read -p "您是否同意上述免责声明？(y/n): " confirm
@@ -79,9 +80,9 @@ bash <(curl -Lso- https://git.io/superspeed)
 #主菜单
 function start_menu(){
     clear
-    red " WJQserver Studio tools" 
-    green " 由WJQserver Studio提供的快捷工具箱 "
-    green " FROM: https://github.com/WJQSERVER/shell "
+    red " WJQserver Studio tools DEV" 
+    green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
+    green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O menu.sh https://raw.githubusercontent.com/WJQSERVER/shell/main/menu.sh && chmod +x menu.sh && clear && ./menu.sh "
     yellow " =================================================="
     green " 1. 网络信息查看" 
