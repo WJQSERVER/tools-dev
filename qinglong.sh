@@ -13,9 +13,9 @@ version: '2'
 services:
   web:
     # alpine 基础镜像版本
-    image: whyour/qinglong:latest
+    # image: whyour/qinglong:latest
     # debian-slim 基础镜像版本
-    # image: whyour/qinglong:debian  
+    image: whyour/qinglong:debian  
     volumes:
       - ./data:/ql/data
     ports:
