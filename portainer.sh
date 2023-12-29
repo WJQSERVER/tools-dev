@@ -25,5 +25,7 @@ CONTAINER_ID=$(docker ps -q --filter ancestor=6053537/portainer-ce)
 # 打印容器信息
 docker ps -f id=$CONTAINER_ID
 
-#访问引导
-echo
+# 提示服务访问地址
+echo "服务已成功启动！"
+echo "请访问以下地址来访问您的服务："
+echo "http://localhost:$PORT"
