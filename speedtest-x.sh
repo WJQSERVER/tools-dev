@@ -25,6 +25,7 @@ CONTAINER_ID=$(docker ps -q --filter ancestor=badapple9/speedtest-x)
 # 打印容器信息
 docker ps -f id=$CONTAINER_ID
 
-# 停止容器
-# docker stop $CONTAINER_ID
-# 根据需要决定是否停止容器
+# 提示服务访问地址
+echo "服务已成功启动！"
+echo "请访问以下地址来访问您的服务："
+echo "http://localhost:$PORT"
