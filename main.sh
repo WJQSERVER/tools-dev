@@ -54,7 +54,7 @@ function start_menu(){
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O menu.sh https://raw.githubusercontent.com/WJQSERVER/shell/main/menu.sh && chmod +x menu.sh && clear && ./menu.sh "
     yellow " =================================================="
-    green " 1. 网络信息查看" 
+    green " 1. 网络侧信息查看" 
     green " 2. Unavailable"
     green " 3. Unavailable"
     green " 4. Unavailable" 
