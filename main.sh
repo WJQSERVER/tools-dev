@@ -68,7 +68,7 @@ curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sS
 
 #三网测速6
 function 3speedtest(){
-bash <(curl -Lso- https://git.io/superspeed)
+bash <(curl -Lso- https://bench.im/hyperspeed)
 }
 
 #docker一键安装11
