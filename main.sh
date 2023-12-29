@@ -41,9 +41,45 @@ blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
 
-#网络侧信息
+#网络侧信息1
 function networkinfo(){
 wget -O networkinfo.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/networkinfo.sh  && chmod +x networkinfo.sh && clear && ./networkinfo.sh
+}
+
+#系统信息2
+function sysinfo(){
+wget -O sysinfo.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/sysinfo.sh && chmod +x sysinfo.sh && clear && ./sysinfo.sh
+}
+
+#SWAP配置3
+function swap(){
+wget -O swap.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/swap.sh && chmod +x swap.sh && clear && ./swap.sh
+}
+
+#修改DNS4
+function change_dns(){
+wget -O change_dns.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/change_dns.sh && chmod +x change_dns.sh && clear && ./change_dns.sh
+}
+
+#三网回程5
+function 3mtr-back(){
+curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
+}
+
+#三网测速6
+#三网测速
+function 3speedtest(){
+bash <(curl -Lso- https://git.io/superspeed)
+}
+
+#docker一键安装11
+function docker-install(){
+wget -O docker-install.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/docker-install.sh && chmod +x docker-install.sh && clear && ./docker-install.sh
+}
+
+#ufw一键安装12
+function ufw-install(){
+wget -O ufw-install.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/ufw-install.sh && chmod +x ufw-install.sh && clear && ./ufw-install.sh
 }
 
 #主菜单
@@ -52,7 +88,7 @@ function start_menu(){
     red " WJQserver Studio tools DEV" 
     green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
-    green " USE:  wget -O menu.sh https://raw.githubusercontent.com/WJQSERVER/shell/main/menu.sh && chmod +x menu.sh && clear && ./menu.sh "
+    green " USE:  wget -O main.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/main.sh && chmod +x main.sh && clear && ./main.sh "
     yellow " =================================================="
     green " 1. 网络侧信息查看" 
     green " 2. Unavailable"
