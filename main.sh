@@ -170,18 +170,51 @@ function start_menu(){
         1 )
            networkinfo
 	;;
+        2 )
+	   sysinfo
+        ;;
+	3 )
+           swap
+	;;
+        4 )
+	   change_dns
+        ;;
+	5 )
+           3mtr-back
+	;;
+        6 )
+	   3speedtest
+        ;;
 	11 )
-            dockersh
+            docker-install
 	;;    
 	12 )
-            swapsh
+            ufw-install
         ;;
         21 )
-	    npmsh
+	    nginxproxymanager
         ;;
 	22 )
-            portainersh
-	;;    
+            portainer
+	;; 
+        23 )
+            uptime
+        ;;
+	24 )
+            speedtest-x
+        ;;
+	25 )
+            qinglong
+        ;;
+	26 )
+            serverstatus
+        ;;
+	31 )
+            wordpress
+        ;;
+	32 )
+            halo
+        ;;
         0 )
             exit 1
         ;;
