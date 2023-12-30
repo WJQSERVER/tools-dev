@@ -39,7 +39,8 @@ interface="eth0"  # 指定您要获取IPv6地址的网络接口
 local_ipv6=$(ip -6 addr show dev $interface | grep -oP '(?<=inet6\s)[\da-fA-F:]+')
 
 # 获取地理位置
-location=$(curl -s ipapi.com/json | awk -F',' '{print $6}')
+country=$(curl -s ipinfo.io/country)
+city=$(curl -s ipinfo.io/city)
 
 # 获取系统时间
 system_time=$(date +"%Y-%m-%d %I:%M %p")
@@ -59,7 +60,8 @@ echo "虚拟内存: $swap_memory"
 echo "硬盘占用: $disk_usage"
 echo "公网IPv4地址: $public_ipv4"
 echo "IPv6地址: $local_ipv6"
-echo "地理位置: $location"
+echo "所在地区: $country"
+echo "所在城市: $city"
 echo "系统时间: $system_time"
 echo "---------------------------"
 
