@@ -17,10 +17,10 @@ cpu_arch=$(uname -m)
 cpu_model=$(lscpu | grep "Model name:" | awk -F: '{print $2}' | awk '{$1=$1;print}')
 
 # 获取CPU核心数
-cpu_cores=$(nproc)
+cpu_cores=$(grep -c '^processor' /proc/cpuinfo)
 
 # 获取CPU占用率
-cpu_usage=$(top -bn1 | grep "Cpu(s)" | awk '{print $2}')
+cpu_usage=$(top -bn1 | grep "Cpu(s)" | awk '{print $2}' | grep 'cpu ' /proc/stat)
 
 # 获取物理内存使用情况
 physical_memory=$(free -m | grep "Mem:" | awk '{printf "%.2f/%.2f MB (%.2f%%)", $3/1024, $2/1024, $3/$2 * 100}')
