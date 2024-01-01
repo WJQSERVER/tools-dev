@@ -20,7 +20,7 @@ cpu_model=$(lscpu | grep "Model name:" | awk -F: '{print $2}' | awk '{$1=$1;prin
 cpu_cores=$(grep -c '^processor' /proc/cpuinfo)
 
 # 获取CPU占用率
-cpu_usage=$$(grep 'cpu ' /proc/stat | awk '{usage=($2+$3+$4)*100/($2+$3+$4+$5+$6+$7)} END {printf "%.1f", usage}')
+cpu_usage=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$3+$4)*100/($2+$3+$4+$5+$6+$7)} END {printf "%.1f", usage}')
 
 # 获取物理内存使用情况
 physical_memory=$(free -m | grep "Mem:" | awk '{printf "%.2f/%.2f MB (%.2f%%)", $3/1024, $2/1024, $3/$2 * 100}')
