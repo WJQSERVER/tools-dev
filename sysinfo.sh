@@ -26,8 +26,12 @@ cpu_usage=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$3+$4)*100/($2+$3+$4+$5+$6+
 physical_memory=$(awk '/MemTotal/{total=$2}/Active/{active=$2} END{printf "%.2f/%.2f MB (%.2f%%)", active/1024, total/1024, active/total*100}' /proc/meminfo)
 
 # 获取虚拟内存使用情况
-swap_memory=$(free -m | grep "Swap:" | awk '{printf "%.2f/%.2f MB (%.2f%%)", $3/1024, $2/1024, $3/$2 * 100}')
-
+swap_total=$(grep -i "SwapTotal" /proc/meminfo | awk '{print $2}')
+swap_free=$(grep -i "SwapFree" /proc/meminfo | awk '{print $2}')
+swap_used=$((($swap_total - $swap_free) / 1024))
+swap_total=$((swap_total / 1024))
+swap_percentage=$(awk "BEGIN {printf \"%.2f\", $swap_used / $swap_total * 100}")
+swap_memory="$swap_used/$swap_total MB ($swap_percentage%)"
 # 获取磁盘使用情况
 disk_usage=$(df -h / | awk '$NF=="/"{printf "%s/%s (%s)", $3, $2, $5}')
 
