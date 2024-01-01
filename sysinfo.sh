@@ -32,6 +32,7 @@ swap_used=$((($swap_total - $swap_free) / 1024))
 swap_total=$((swap_total / 1024))
 swap_percentage=$(awk "BEGIN {printf \"%.2f\", $swap_used / $swap_total * 100}")
 swap_memory="$swap_used/$swap_total MB ($swap_percentage%)"
+
 # 获取磁盘使用情况
 disk_usage=$(df -h / | awk '$NF=="/"{printf "%s/%s (%s)", $3, $2, $5}')
 
