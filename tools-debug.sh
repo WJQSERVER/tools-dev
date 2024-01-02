@@ -50,8 +50,33 @@ wget -O sysinfo.sh ${repo_url}sysinfo.sh && chmod +x sysinfo.sh && ./sysinfo.sh
 }
 
 #安装docker2
-function docker-install.sh(){
+function docker-install(){
 wget -O docker-install.sh ${repo_url}docker-install.sh && chmod +x docker-install.sh && ./docker-install.sh
+}
+
+#系统工具菜单3
+function systools(){
+wget -O menu_selector.sh ${repo_url}systools/menu_selector.sh && chmod +x menu_selector.sh && ./menu_selector.sh
+}
+
+#面板部署菜单4
+function panel(){
+wget -O menu.sh ${repo_url}panel/menu.sh && chmod +x menu.sh && ./menu.sh
+}
+
+#docker项目部署菜单5
+function docker-container(){
+wget -O menu.sh ${repo_url}docker-container/menu.sh && chmod +x menu.sh && ./menu.sh
+}
+
+#测试工具菜单6
+function test-tool(){
+wget -O menu.sh ${repo_url}Test/menu.sh && chmod +x menu.sh && ./menu.sh
+}
+
+#网站部署菜单7
+function web(){
+wget -O menu.sh ${repo_url}web/menu.sh && chmod +x menu.sh && ./menu.sh
 }
 
 #主菜单
@@ -78,10 +103,10 @@ function start_menu(){
            sysinfo
 	;;
         2 )
-	   sysinfo
+	   docker-install
         ;;
 	3 )
-           swap
+           systools
 	;;
         4 )
 	   change_dns
