@@ -85,7 +85,7 @@ function start_menu(){
     red " WJQserver Studio tools DEV" 
     green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
-    green " USE:  wget -O main.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/main.sh && chmod +x main.sh && clear && ./main.sh "
+    green " USE:  wget -O ${repo_url}main.sh && chmod +x main.sh && clear && ./main.sh "
     yellow " =================================================="
     green " 1. 系统信息查看" 
     green " 2. Docker一键安装"
@@ -109,14 +109,17 @@ function start_menu(){
            systools
 	;;
         4 )
-	   change_dns
+	   panel
         ;;
 	5 )
-           3mtr-back
+           docker-container
 	;;
         6 )
-	   3speedtest
+	   test-tool
         ;;
+	7 )
+           web
+	;;   
 
         0 )
             exit 1
