@@ -54,7 +54,3 @@ wget -O serverstatus.sh ${repo_url}panel/serverstatus.sh && chmod +x serverstatu
             echo "无效的选项，请重新选择。"
             ;;
     esac
-
-    # 暂停一段时间以便用户查看输出
-    sleep 2
-done
