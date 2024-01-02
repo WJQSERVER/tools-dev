@@ -85,7 +85,7 @@ function start_menu(){
     red " WJQserver Studio tools DEV" 
     green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
-    green " USE:  wget -O ${repo_url}main.sh && chmod +x tools.sh && clear && ./tools.sh "
+    green " USE:  wget -O ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
     green " 1. 系统信息查看" 
     green " 2. Docker一键安装"
