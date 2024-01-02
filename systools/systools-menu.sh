@@ -6,24 +6,67 @@ clear
 # 常量定义
 repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
 
-# 定义函数来执行选项1的操作
+# 修改root密码
 1() {
-
+wget -O change-root-password.sh ${repo_url}systools/change-root-password.sh && chmod +x change-root-password.sh && ./change-root-password.sh
 }
 
-# 定义函数来执行选项2的操作
+# 创建普通用户
 2() {
-
+wget -O create_user.sh ${repo_url}systools/create_user.sh && chmod +x create_user.sh && ./create_user.sh
 }
 
-# 定义函数来执行选项3的操作
+# 修改主机名
 3() {
+wget -O change_hostname.sh ${repo_url}systools/change_hostname.sh && chmod +x change_hostname.sh && ./change_hostname.sh
+}
 
+#修改ssh端口
+4() {
+wget -O change_ssh_port.sh ${repo_url}systools/change_ssh_port.sh && chmod +x change_ssh_port.sh && ./change_ssh_port.sh
+}
+
+#检查端口占用
+5() {
+wget -O check_port_usage.sh ${repo_url}systools/check_port_usage.sh && chmod +x check_port_usage.sh && ./check_port_usage.sh
+}
+
+#修改时区
+6() {
+wget -O timezone.sh ${repo_url}systools/timezone.sh && chmod +x timezone.sh && ./timezone.sh
+}
+
+#开启UFW防火墙
+7() {
+wget -O ufw.sh ${repo_url}systools/ufw.sh && chmod +x ufw.sh && ./ufw.sh
+}
+
+#修改SWAP虚拟内存设置
+8() {
+wget -O swap.sh ${repo_url}systools/swap.sh && chmod +x swap.sh && ./swap.sh
+}
+
+#修改DNS
+9() {
+wget -O change_dns.sh ${repo_url}systools/change_dns.sh && chmod +x change_dns.sh && ./change_dns.sh
+}
+#网络侧信息查看
+10() {
+wget -O networkinfo.sh ${repo_url}systools/networkinfo.sh && chmod +x networkinfo.sh && ./networkinfo.sh
+}
+#用户管理
+11() {
+wget -O user_management.sh ${repo_url}systools/user_management.sh && chmod +x user_management.sh && ./user_management.sh
+}
+
+#重启
+99() {
+reboot
 }
 
 # 显示菜单
 echo "请选择一个选项："
-echo "1. 选项1"
+echo "1. 修改root密码"
 echo "2. 选项2"
 echo "3. 选项3"
 echo "4. 退出"
