@@ -49,7 +49,10 @@ function sysinfo(){
 wget -O sysinfo.sh ${repo_url}sysinfo.sh && chmod +x sysinfo.sh && ./sysinfo.sh
 }
 
-#
+#安装docker2
+function docker-install.sh(){
+wget -O docker-install.sh ${repo_url}docker-install.sh && chmod +x docker-install.sh && ./docker-install.sh
+}
 
 #主菜单
 function start_menu(){
@@ -60,38 +63,12 @@ function start_menu(){
     green " USE:  wget -O main.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/main.sh && chmod +x main.sh && clear && ./main.sh "
     yellow " =================================================="
     green " 1. 系统信息查看" 
-    green " 2. 系统信息查看"
-    green " 3. SWAP配置"
-    green " 4. DNS修改" 
-    green " 5. 三网回程测试"
-    green " 6. 三网测速"
-    green " 7. Unavailable"
-    yellow " --------------------------------------------------"
-    green " 11. Docker一键安装"
-    green " 12. UFW一键安装" 
-    green " 13. Unavailable"
-    green " 14. Unavailable"
-    green " 15. Unavailable"
-    green " 16. Unavailable"
-    green " 17. Unavailable" 
-    green " 18. Unavailable"
-    green " 19. Unavailable"
-    yellow " --------------------------------------------------"
-    green " 21. Nginx Proxy Manager图形化面板部署"
-    green " 22. Portainer-Docker管理面板部署"
-    green " 23. Uptime-Kuma部署"
-    green " 24. Speedtest-X部署"
-    green " 25. 青龙面板部署"
-    green " 26. Serverstatus探针部署"
-    green " 27. Unavailable"
-    green " 28. Unavailable"
-    green " 29. Unavailable"
-    yellow " --------------------------------------------------"
-    green " 31. WordPress部署"
-    green " 32. Halo部署"
-    green " 33. Unavailable"
-    yellow " --------------------------------------------------"
-    green " 00. Unavailable"
+    green " 2. Docker一键安装"
+    green " 3. 系统工具"
+    green " 4. 面板部署" 
+    green " 5. Docker项目部署"
+    green " 6. 测试工具"
+    green " 7. 网站部署"
     green " =================================================="
     green " 0. 退出脚本"
     echo
