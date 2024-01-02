@@ -1,37 +1,53 @@
 #!/bin/bash
 
-######################################
-# 简单菜单选择器脚本
-# 提供一个交互式菜单，根据用户选择执行相应操作
-######################################
+# 清空屏幕
+clear
 
-# 显示菜单选项
-echo "欢迎使用简单菜单选择器脚本"
-echo "请选择以下选项："
+# 常量定义
+repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
 
-# 显示菜单循环
+# 定义函数来执行选项1的操作
+option1() {
+    wget -O halo.sh ${repo_url}web/halo.sh && chmod +x halo.sh && ./halo.sh
+}
+
+# 定义函数来执行选项2的操作
+option2() {
+    wget -O wordpress.sh ${repo_url}web/wordpress.sh && chmod +x wordpress.sh && ./wordpress.sh
+}
+
+# 定义函数来执行选项3的操作
+option3() {
+    echo "执行选项3的操作"
+    # 在这里执行选项3的操作
+}
+
+# 主循环
 while true; do
-    echo "1. 选项1"
-    echo "2. 选项2"
-    echo "3. 选项3"
+    # 清空屏幕
+    clear
+
+    # 显示菜单
+    echo "请选择一个选项："
+    echo "1. Halo"
+    echo "2. WordPress"
+    echo "3. 返回主菜单"
     echo "4. 退出"
 
-    # 获取用户输入
-    read -p "请输入选项编号: " choice
+    # 提示用户输入选项编号
+    echo -n "请输入选项对应的编号: "
+    read choice
 
-    # 根据用户选择执行相应操作
+    # 根据用户输入执行相应的操作
     case $choice in
         1)
-            echo "你选择了选项1"
-            # 在这里执行选项1的操作
+            option1
             ;;
         2)
-            echo "你选择了选项2"
-            # 在这里执行选项2的操作
+            option2
             ;;
         3)
-            echo "你选择了选项3"
-            # 在这里执行选项3的操作
+            option3
             ;;
         4)
             echo "再见！"
@@ -42,6 +58,6 @@ while true; do
             ;;
     esac
 
-    # 清空屏幕
-    clear
+    # 暂停一段时间以便用户查看输出
+    sleep 2
 done
