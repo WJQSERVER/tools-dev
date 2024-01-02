@@ -5,6 +5,9 @@
 # 提供一个交互式菜单，根据用户选择执行相应操作
 ######################################
 
+# 清空屏幕
+    clear
+
 #常量
 repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
 
@@ -28,10 +31,12 @@ while true; do
         1)
             echo "三网回程测试"
             wget -O 3mtr-back.sh ${repo_url}Test/3mtr-back.sh && chmod +x 3mtr-back.sh && ./3mtr-back.sh
+            fi
             ;;
         2)
             echo "开始三网测速"
             wget -O 3speedtest.sh ${repo_url}Test/3speedtest.sh && chmod +x 3speedtest.sh && ./3speedtest.sh
+            fi
             ;;
         3)
             echo "正在返回主菜单"
