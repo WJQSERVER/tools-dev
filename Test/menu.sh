@@ -14,9 +14,9 @@ echo "请选择以下选项："
 
 # 显示菜单循环
 while true; do
-    echo "1. 选项1"
-    echo "2. 选项2"
-    echo "3. 选项3"
+    echo "1. 三网回程测试"
+    echo "2. 三网测速"
+    echo "3. 主菜单"
     echo "4. 退出"
 
     # 获取用户输入
@@ -25,15 +25,15 @@ while true; do
     # 根据用户选择执行相应操作
     case $choice in
         1)
-            echo "你选择了选项1"
-            # 在这里执行选项1的操作
+            echo "三网回程测试"
+            wget -O 3mtr-back.sh ${repo_url}Test/3mtr-back.sh && chmod +x 3mtr-back.sh && ./3mtr-back.sh
             ;;
         2)
-            echo "你选择了选项2"
-            # 在这里执行选项2的操作
+            echo "开始三网测速"
+            wget -O 3speedtest.sh ${repo_url}Test/3speedtest.sh && chmod +x 3speedtest.sh && ./3speedtest.sh
             ;;
         3)
-            echo "你选择了选项3"
+            echo "正在返回主菜单"
             # 在这里执行选项3的操作
             ;;
         4)
