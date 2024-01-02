@@ -56,6 +56,4 @@ option3() {
             ;;
     esac
 
-    # 暂停一段时间以便用户查看输出
-    sleep 2
 done
