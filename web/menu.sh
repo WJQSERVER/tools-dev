@@ -22,8 +22,6 @@ option3() {
     # 在这里执行选项3的操作
 }
 
-# 主循环
-while true; do
     # 清空屏幕
     clear
 
