@@ -5,8 +5,9 @@
 # 提供一个交互式菜单，根据用户选择执行相应操作
 ######################################
 
-# 清空屏幕
-    clear
+#常量
+repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
+
 
 # 显示菜单选项
 echo "欢迎使用简单菜单选择器脚本"
