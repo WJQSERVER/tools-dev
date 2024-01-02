@@ -1,6 +1,9 @@
 # WJQserver-tools-DEV
 由WJQserver Studio推出的快捷Linux工具箱-开发版本
+V.0.1-DEV
 <pre>wget -O main.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/main.sh && chmod +x main.sh && clear && ./main.sh</pre>
+V.0.2-DEV-DEV
+<pre>wget -O tools.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/tools.sh && chmod +x tools.sh && clear && ./tools.sh</pre>
 # 声明
 
 大部分功能非团队原创，部分功能仅提供辅助调用项目
