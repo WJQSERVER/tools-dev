@@ -56,27 +56,27 @@ wget -O docker-install.sh ${repo_url}docker-install.sh && chmod +x docker-instal
 
 #系统工具菜单3
 function systools(){
-wget -O menu_selector.sh ${repo_url}systools/menu_selector.sh && chmod +x menu_selector.sh && ./menu_selector.sh
+wget -O systools-menu.sh ${repo_url}systools/systools-menu.sh && chmod +x systools-menu.sh && ./systools-menu.sh
 }
 
 #面板部署菜单4
 function panel(){
-wget -O menu.sh ${repo_url}panel/menu.sh && chmod +x menu.sh && ./menu.sh
+wget -O panel-menu.sh ${repo_url}panel/panel-menu.sh && chmod +x panel-menu.sh && ./panel-menu.sh
 }
 
 #docker项目部署菜单5
 function docker-container(){
-wget -O menu.sh ${repo_url}docker-container/menu.sh && chmod +x menu.sh && ./menu.sh
+https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/docker-container/docker-menu.sh
 }
 
 #测试工具菜单6
 function test-tool(){
-wget -O menu.sh ${repo_url}Test/menu.sh && chmod +x menu.sh && ./menu.sh
+wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
 }
 
 #网站部署菜单7
 function web(){
-wget -O menu.sh ${repo_url}web/menu.sh && chmod +x menu.sh && ./menu.sh
+wget -O web-menu.sh ${repo_url}web/web-menu.sh && chmod +x web-menu.sh && ./web-menu.sh
 }
 
 #主菜单
