@@ -34,7 +34,7 @@ while true; do
     echo "4. 退出"
 
     # 读取用户输入
-    echo -n "请输入选项对应的编号: 
+    echo -n "请输入选项对应的编号: "
     read choice
 
     # 根据用户输入执行相应的操作
