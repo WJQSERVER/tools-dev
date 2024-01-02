@@ -46,7 +46,10 @@ blue(){
 
 #系统信息1
 function sysinfo(){
+wget -O sysinfo.sh ${repo_url}sysinfo.sh && chmod +x sysinfo.sh && ./sysinfo.sh
+}
 
+#
 
 #主菜单
 function start_menu(){
@@ -56,7 +59,7 @@ function start_menu(){
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O main.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/main.sh && chmod +x main.sh && clear && ./main.sh "
     yellow " =================================================="
-    green " 1. 网络侧信息查看" 
+    green " 1. 系统信息查看" 
     green " 2. 系统信息查看"
     green " 3. SWAP配置"
     green " 4. DNS修改" 
@@ -95,7 +98,7 @@ function start_menu(){
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           networkinfo
+           sysinfo
 	;;
         2 )
 	   sysinfo
