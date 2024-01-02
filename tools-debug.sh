@@ -44,85 +44,9 @@ blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
 
-#网络侧信息1
-function networkinfo(){
-wget -O networkinfo.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/networkinfo.sh  && chmod +x networkinfo.sh && clear && ./networkinfo.sh
-}
-
-#系统信息2
+#系统信息1
 function sysinfo(){
-wget -O sysinfo.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/sysinfo.sh && chmod +x sysinfo.sh && clear && ./sysinfo.sh
-}
 
-#SWAP配置3
-function swap(){
-wget -O swap.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/swap.sh && chmod +x swap.sh && clear && ./swap.sh
-}
-
-#修改DNS4
-function change_dns(){
-wget -O change_dns.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/change_dns.sh && chmod +x change_dns.sh && clear && ./change_dns.sh
-}
-
-#三网回程5
-function 3mtr-back(){
-curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
-}
-
-#三网测速6
-function 3speedtest(){
-bash <(curl -Lso- https://bench.im/hyperspeed)
-}
-
-#docker一键安装11
-function docker-install(){
-wget -O docker-install.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/docker-install.sh && chmod +x docker-install.sh && clear && ./docker-install.sh
-}
-
-#ufw一键安装12
-function ufw-install(){
-wget -O ufw-install.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/ufw-install.sh && chmod +x ufw-install.sh && clear && ./ufw-install.sh
-}
-
-#nginx图形化面板一键安装21
-function nginxproxymanager(){
-wget -O nginxproxymanager.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
-}
-
-#docker图形化管理面板22
-function portainer(){
-wget -O portainer.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/portainer.sh && chmod +x portainer.sh && ./portainer.sh
-}
-
-#uptime kuma部署23
-function uptime(){
-wget -O uptime.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/uptime.sh && chmod +x uptime.sh && ./uptime.sh
-}
-
-#speedtest-x部署24
-function speedtest-x(){
-wget -O speedtest-x.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
-}
-
-#青龙面板部署25
-function qinglong(){
-wget -O qinglong.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
-}
-
-#serverstatus探针部署26
-function serverstatus(){
-wget -O serverstatus.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
-}
-
-#wordpress部署31
-function wordpress(){
-wget -O wordpress.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/wordpress.sh && chmod +x wordpress.sh && ./wordpress.sh
-}
-
-#halo部署32
-function halo(){
-wget -O halo.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/halo.sh && chmod +x halo.sh && ./halo.sh
-}
 
 #主菜单
 function start_menu(){
