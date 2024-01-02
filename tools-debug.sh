@@ -6,7 +6,7 @@
 echo "免责声明：请阅读并同意以下条款才能继续使用本程序。"
 echo "本程序仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo "使用本程序所造成的任何损失或损害，作者不承担任何责任。"
-echo "当前版本为V.0.1-dev,DEV版本不保证兼容性和可用性。"
+echo "当前版本为V.0.2-dev,DEV版本不保证兼容性和可用性。"
 
 #Debug版
 repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
@@ -115,36 +115,7 @@ function start_menu(){
         6 )
 	   3speedtest
         ;;
-	11 )
-            docker-install
-	;;    
-	12 )
-            ufw-install
-        ;;
-        21 )
-	    nginxproxymanager
-        ;;
-	22 )
-            portainer
-	;; 
-        23 )
-            uptime
-        ;;
-	24 )
-            speedtest-x
-        ;;
-	25 )
-            qinglong
-        ;;
-	26 )
-            serverstatus
-        ;;
-	31 )
-            wordpress
-        ;;
-	32 )
-            halo
-        ;;
+
         0 )
             exit 1
         ;;
