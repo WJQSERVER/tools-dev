@@ -55,5 +55,3 @@ option3() {
             echo "无效的选项，请重新选择。"
             ;;
     esac
-
-done
