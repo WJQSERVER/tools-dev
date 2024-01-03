@@ -66,7 +66,7 @@ wget -O panel-menu.sh ${repo_url}panel/panel-menu.sh && chmod +x panel-menu.sh &
 
 #docker项目部署菜单5
 function docker-container(){
-https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/docker-container/docker-menu.sh
+wget -O docker-menu.sh ${repo_url}docker-container/docker-menu.sh && chmod +x docker-menu.sh && ./docker-menu.sh
 }
 
 #测试工具菜单6
