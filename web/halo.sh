@@ -11,6 +11,9 @@ mkdir ~/halo && cd ~/halo
 echo -n "请输入要映射的端口号（例如：8080）："
 read port
 
+#站点地址
+read -p "请输入站点地址(例如https://example.com/): " WEBSITE_URL
+
 # 创建 Docker Compose 配置文件
 cat > docker-compose.yml <<EOF
 version: "3"
@@ -42,7 +45,7 @@ services:
       - --spring.r2dbc.password=openpostgresql
       - --spring.sql.init.platform=postgresql
       # 外部访问地址，请根据实际需要修改
-      - --halo.external-url=http://localhost:8090/
+      - --halo.external-url=$WEBSITE_URL
   halodb:
     image: postgres:15.4
     container_name: halodb
@@ -72,3 +75,5 @@ EOF
 docker-compose up -d
 
 echo "Halo 已成功部署！"
+echo "请访问以下地址来访问您的服务："
+echo "http://服务器IP:$PORT"
