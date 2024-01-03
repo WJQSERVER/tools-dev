@@ -9,7 +9,7 @@ echo "使用本程序所造成的任何损失或损害，作者不承担任何�
 echo "当前版本为V.0.2-dev,DEV版本不保证兼容性和可用性。"
 
 #Debug版
-repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
+repo_url="https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
 
 # 显示确认提示
 read -p "您是否同意上述免责声明？(y/n): " confirm
