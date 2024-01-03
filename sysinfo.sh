@@ -23,7 +23,12 @@ cpu_cores=$(grep -c '^processor' /proc/cpuinfo)
 cpu_usage=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$3+$4)*100/($2+$3+$4+$5+$6+$7)} END {printf "%.1f", usage}')
 
 # 获取物理内存使用情况
-memory_info=$(free -m | awk '/Mem:/{total=$2; active=$3} END{printf "%.2f/%.2f MB (%.2f%%)", active, total, (active/total)*100}'))
+# 获取已使用内存大小
+used_mem=$(free -h | awk '/^Mem:/ {print $3}')
+# 获取总内存大小
+total_mem=$(free -h | awk '/^Mem:/ {print $2}')
+# 计算已使用内存的百分比
+used_percentage=$(free | awk '/^Mem:/ {printf("%.2f"), $3/$2 * 100}')
 
 # 获取虚拟内存使用情况
 swap_total=$(grep -i "SwapTotal" /proc/meminfo | awk '{print $2}')
@@ -60,7 +65,7 @@ echo "CPU架构: $cpu_arch"
 echo "CPU型号: $cpu_model"
 echo "CPU核心数: $cpu_cores"
 echo "CPU占用: $cpu_usage%"
-echo "物理内存: $memory_info"
+echo "物理内存：$used_mem/$total_mem ($used_percentage%)"
 echo "虚拟内存: $swap_memory"
 echo "硬盘占用: $disk_usage"
 echo "公网IPv4地址: $public_ipv4"
