@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # 默认端口
-DEFAULT_PORT=9001
+DEFAULT_PORT=9000
+
+#自定义端口
+read -p "请输入容器端口: " PORT
 
 # 检查是否指定了自定义端口，并将其设置为用户输入的值
 if [ $# -eq 1 ]; then
