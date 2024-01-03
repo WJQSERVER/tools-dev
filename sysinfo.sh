@@ -23,7 +23,7 @@ cpu_cores=$(grep -c '^processor' /proc/cpuinfo)
 cpu_usage=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$3+$4)*100/($2+$3+$4+$5+$6+$7)} END {printf "%.1f", usage}')
 
 # 获取物理内存使用情况
-physical_memory=$(awk '/MemTotal/{total=$2}/Active/{active=$2} END{printf "%.2f/%.2f MB (%.2f%%)", active/1024, total/1024, active/total*100}' /proc/meminfo)
+memory_info=$(free -m | awk '/Mem:/{total=$2; active=$3} END{printf "%.2f/%.2f MB (%.2f%%)", active, total, (active/total)*100}'))
 
 # 获取虚拟内存使用情况
 swap_total=$(grep -i "SwapTotal" /proc/meminfo | awk '{print $2}')
