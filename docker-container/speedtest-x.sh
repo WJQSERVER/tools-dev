@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 默认端口
-DEFAULT_PORT=9000
+DEFAULT_PORT=9001
 
 #自定义端口
 read -p "请输入容器端口: " PORT
