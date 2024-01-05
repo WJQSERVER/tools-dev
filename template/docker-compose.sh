@@ -25,4 +25,4 @@ docker-compose up -d
 # 提示服务访问地址
 echo "服务已成功启动！"
 echo "请访问以下地址来访问您的服务："
-echo "http://localhost:$PORT"
+echo "http:/<服务器IP>:$PORT"
