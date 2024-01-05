@@ -1,5 +1,5 @@
-# WJQserver-tools-DEV
-由WJQserver Studio推出的快捷Linux工具箱-开发版本
+# WJQserver-tools-BETA
+由WJQserver Studio推出的快捷Linux工具箱-测试版本
 V.0.2-BETA
 <pre>wget -O tools.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/tools.sh && chmod +x tools.sh && clear && ./tools.sh</pre>
 V.0.2-BETA-CN
