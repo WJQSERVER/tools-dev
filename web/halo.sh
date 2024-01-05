@@ -4,7 +4,7 @@
 command -v docker >/dev/null 2>&1 || { echo >&2 "请先安装 Docker！"; exit 1; }
 command -v docker-compose >/dev/null 2>&1 || { echo >&2 "请先安装 Docker Compose！"; exit 1; }
 
-# 创建 WordPress 目录
+# 创建 Halo 目录
 mkdir ~/halo && cd ~/halo
 
 # 获取用户输入的端口号
