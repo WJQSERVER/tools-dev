@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 创建目录
-mkdir my_app
-cd my_app
+mkdir /root/data/docker_data/*
+cd /root/data/docker_data/*
 
 # 从用户输入中获取容器端口
 read -p "请输入容器端口: " PORT
@@ -25,4 +25,4 @@ docker-compose up -d
 # 提示服务访问地址
 echo "服务已成功启动！"
 echo "请访问以下地址来访问您的服务："
-echo "http://localhost:$PORT"
+echo "http:/<服务器IP>:$PORT"
