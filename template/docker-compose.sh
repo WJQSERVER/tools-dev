@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#
+clear
+
 # 创建目录
 mkdir /root/data/docker_data/*
 cd /root/data/docker_data/*
