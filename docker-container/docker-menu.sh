@@ -4,7 +4,7 @@
 clear
 
 # 常量定义
-repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
+repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/"
 
 # nginx proxy manager
 op1() {
