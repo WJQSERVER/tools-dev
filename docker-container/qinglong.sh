@@ -19,7 +19,7 @@ services:
     volumes:
       - ./data:/ql/data
     ports:
-      - "0.0.0.0:$PORT:5700"
+      - "$PORT:5700"
     environment:
       # 部署路径非必须，以斜杠开头和结尾，比如 /test/
       QlBaseUrl: '/'
