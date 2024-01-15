@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 创建目录
-mkdir /root/data/docker_data/*
+mkdir -p /root/data/docker_data/*
 cd /root/data/docker_data/*
 
 # 从用户输入中获取容器端口
