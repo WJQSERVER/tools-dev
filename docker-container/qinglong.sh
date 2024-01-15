@@ -10,27 +10,27 @@ cd /root/data/docker_data/qinglong
 # 定义函数来执行选项1的操作
 A() {
     tag=debian
-    echo "debian"
+    echo "正在安装debian(镜像底层为debian-slim)青龙"
 }
 
 # 定义函数来执行选项2的操作
 B() {
     tag=latest
-    echo "latest"
+    echo "正在安装latest-Alpine(镜像底层为alpine)青龙"
 }
 
 # 定义函数来执行选项3的操作
 C() {
      tag=2.11.3
-     echo "2.11.3"
+     echo "正在安装2.11.3版本青龙(特殊版本,供老版本脚本使用)"
 }
 
 {
     # 显示菜单
     echo "请选择青龙版本："
-    echo "1. Debian"
-    echo "2. Latest(Alpine)"
-    echo "3. 2.11.3"
+    echo "1. Debian(debian-slim)"
+    echo "2. Alpine"
+    echo "3. 2.11.3(供老脚本或对版本有要求的情况使用)"
     echo "4. 退出"
 
     # 读取用户输入
@@ -53,7 +53,8 @@ C() {
             exit
             ;;
         *)
-            echo "无效的选项，请重新选择。"
+            echo "使用默认TAG安装"
+            tag=latest
             ;;
     esac
 }
