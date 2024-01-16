@@ -3,6 +3,15 @@
 # 清空屏幕
 clear
 
+# 检查是否已经安装 Docker 和 Docker Compose
+if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; then
+    echo "请先安装 Docker 和 Docker Compose。"
+    exit 1
+fi
+
+# 清空屏幕
+clear
+
 # 常量定义
 repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/"
 
