@@ -4,7 +4,7 @@
     clear
 
 #常量-DEV
-repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
+repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/"
 
 # 定义函数来执行选项1的操作
 A() {
@@ -20,7 +20,7 @@ B() {
 C() {
   
 }
-
+{
     # 显示菜单
     echo "请选择一个选项："
     echo "1. A"
@@ -51,3 +51,4 @@ C() {
             echo "无效的选项，请重新选择。"
             ;;
     esac
+}

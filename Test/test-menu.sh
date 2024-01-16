@@ -4,7 +4,7 @@
     clear
 
 #常量
-repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
+repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/"
 
 # 定义函数来执行选项1的操作
 option1() {
