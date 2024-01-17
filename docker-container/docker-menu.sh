@@ -40,6 +40,8 @@ op5(){
 wget -O uptime-kuma.sh ${repo_url}docker-container/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
 }
 
+#
+
 # 显示菜单
 echo "请选择一个选项："
 echo "1. Nginx Proxy Manager 可视化Nginx管理面板"
@@ -69,6 +71,9 @@ case $choice in
         ;;
     5)
         op5
+        ;;
+    99)
+        cat
         ;;    
     0)
         echo "再见！"
