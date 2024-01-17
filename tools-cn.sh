@@ -6,10 +6,36 @@
 echo "免责声明：请阅读并同意以下条款才能继续使用本程序。"
 echo "本程序仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo "使用本程序所造成的任何损失或损害，作者不承担任何责任。"
-echo "当前版本为V.0.2-DEV-DEV,DEV版本不保证兼容性和可用性。"
+echo "当前版本为V.0.2-BETA,BETA仅供测试使用。"
 
-#DEV-DEV-CN版
-repo_url="https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/develop/"
+#BETA版
+repo_url="https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"
+
+# 检查配置文件是否存在
+conf_file="repo_url.conf"
+if [ ! -f "$conf_file" ]; then
+    # 创建配置文件并写入变量
+    echo "repo_url=$repo_url" > "$conf_file"
+else
+    # 配置文件已存在，不进行任何操作
+    echo "配置文件已存在"
+fi
+
+# 导入配置文件
+source "repo_url.conf"
+
+# 检查配置文件是否存在
+conf_file="repo_url.conf"
+if [ ! -f "$conf_file" ]; then
+    # 创建配置文件并写入变量
+    echo "repo_url=$repo_url" > "$conf_file"
+else
+    # 配置文件已存在，不进行任何操作
+    echo "配置文件已存在"
+fi
+
+# 导入配置文件
+source "repo_url.conf"
 
 # 显示确认提示
 read -p "您是否同意上述免责声明？(y/n): " confirm
