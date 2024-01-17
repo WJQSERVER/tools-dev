@@ -71,9 +71,9 @@ networks:
   halo_network:
 EOF
 
-# 启动 WordPress
+# 启动 HALO
 docker-compose up -d
 
 echo "Halo 已成功部署！"
 echo "请访问以下地址来访问您的服务："
-echo "http://服务器IP:$PORT"
+echo "http://<服务器IP>:$PORT"

@@ -23,8 +23,8 @@ cat > /etc/docker/daemon.json <<EOF
 {
     "log-driver": "json-file",
     "log-opts": {
-        "max-size": "20m",
-        "max-file": "3"
+        "max-size": "10m",
+        "max-file": "4"
     },
     "ipv6": true,
     "fixed-cidr-v6": "fd00:dead:beef:c0::/80",

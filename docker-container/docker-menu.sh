@@ -12,8 +12,8 @@ fi
 # 清空屏幕
 clear
 
-# 常量定义
-repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/"
+# 导入配置文件
+source "repo_url.conf"
 
 # nginx proxy manager
 op1() {

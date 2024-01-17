@@ -17,14 +17,7 @@ read -p "请输入容器端口: " PORT
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
-version: '3'
-services:
-  my_container:
-    image: your_image_name
-    ports:
-      - $PORT:80
-    volumes:
-      - ./data:/app/data
+#read
 EOF
 
 # 启动容器

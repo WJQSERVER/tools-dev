@@ -4,35 +4,9 @@
 
 # 显示免责声明
 echo "免责声明：请阅读并同意以下条款才能继续使用本程序。"
-echo "本程序仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
-echo "使用本程序所造成的任何损失或损害，作者不承担任何责任。"
-echo "当前版本为V.0.2-BETA-CN,CN版本为国内GitHub代理,BETA版本仅供测试使用。"
-
-#BETA版
-repo_url="https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"
-
-# 检查配置文件是否存在
-conf_file="repo_url.conf"
-if [ ! -f "$conf_file" ]; then
-    # 创建配置文件并写入变量
-    echo "repo_url=$repo_url" > "$conf_file"
-else
-    # 配置文件已存在，不进行任何操作
-    echo "配置文件已存在"
-fi
-
-# 导入配置文件
-source "repo_url.conf"
-
-# 检查配置文件是否存在
-conf_file="repo_url.conf"
-if [ ! -f "$conf_file" ]; then
-    # 创建配置文件并写入变量
-    echo "repo_url=$repo_url" > "$conf_file"
-else
-    # 配置文件已存在，不进行任何操作
-    echo "配置文件已存在"
-fi
+echo "本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
+echo "使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
+echo "本脚本用于链接到其他作者的脚本，不做任何保证"
 
 # 导入配置文件
 source "repo_url.conf"
@@ -127,25 +101,25 @@ function start_menu(){
     case "$menuNumberInput" in
         1 )
            sysinfo
-	;;
+	    ;;
         2 )
 	   docker-install
         ;;
-	3 )
+	    3 )
            systools
-	;;
+	    ;;
         4 )
 	   panel
         ;;
-	5 )
+	    5 )
            docker-container
-	;;
+	    ;;
         6 )
 	   test-tool
         ;;
-	7 )
+	    7 )
            web
-	;;   
+	    ;;   
 
         0 )
             exit 1
