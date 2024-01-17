@@ -22,7 +22,7 @@ services:
     image: dreamacro/clash:latest
     container_name: clash
     volumes:
-      - ./configs/config.yaml:/root/.config/clash/config.yaml
+      - ./configs:/root/.config/clash
     ports:
       - "7890:7890/tcp"
       - "7890:7890/udp"
