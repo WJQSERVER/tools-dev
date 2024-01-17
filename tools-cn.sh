@@ -6,7 +6,7 @@
 echo "免责声明：请阅读并同意以下条款才能继续使用本程序。"
 echo "本程序仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo "使用本程序所造成的任何损失或损害，作者不承担任何责任。"
-echo "当前版本为V.0.2-BETA,BETA仅供测试使用。"
+echo "当前版本为V.0.2-BETA-CN,CN版本为国内GitHub代理,BETA版本仅供测试使用。"
 
 #BETA版
 repo_url="https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"
