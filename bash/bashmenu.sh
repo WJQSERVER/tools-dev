@@ -1,91 +1,135 @@
-#!/bin/bash
+#! /bin/bash
+# By WJQSERVER-STUDIO_WJQSERVER
+#https://github.com/WJQSERVER/tools-dev
 
-# 创建目录
-mkdir -p /root/data/docker_data/qinglong
-cd /root/data/docker_data/qinglong
+# 显示免责声明
+echo "免责声明：请阅读并同意以下条款才能继续使用本程序。"
+echo "本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
+echo "使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
+echo "本脚本用于链接到其他作者的脚本，不做任何保证"
 
-# 清空屏幕
+# 导入配置文件
+source "repo_url.conf"
+
+# 显示确认提示
+read -p "您是否同意上述免责声明？(y/n): " confirm
+
+# 处理确认输入
+if [[ $confirm != [Yy] ]]; then
+    echo "您必须同意免责声明才能继续使用本程序。"
+    exit 1
+fi
+
+# 确认执行操作
+read -p "此操作将安装 wget, curl, vim 等常用软件包并进行更新。是否继续？(不进行此操作可能造成脚本异常)(y/n) " choice
+
+if [[ $choice == "y" ]]; then
+  # 安装软件包
+  apt update
+  sudo apt upgrade -y
+  apt install wget curl vim git sudo -y
+fi
+
+#彩色
+red(){
+    echo -e "\033[31m\033[01m$1\033[0m"
+}
+green(){
+    echo -e "\033[32m\033[01m$1\033[0m"
+}
+yellow(){
+    echo -e "\033[33m\033[01m$1\033[0m"
+}
+blue(){
+    echo -e "\033[34m\033[01m$1\033[0m"
+}
+
+#系统信息1
+function sysinfo(){
+wget -O sysinfo.sh ${repo_url}sysinfo.sh && chmod +x sysinfo.sh && ./sysinfo.sh
+}
+
+#安装docker2
+function docker-install(){
+wget -O docker-install.sh ${repo_url}docker-install.sh && chmod +x docker-install.sh && ./docker-install.sh
+}
+
+#系统工具菜单3
+function systools(){
+wget -O systools-menu.sh ${repo_url}systools/systools-menu.sh && chmod +x systools-menu.sh && ./systools-menu.sh
+}
+
+#面板部署菜单4
+function panel(){
+wget -O panel-menu.sh ${repo_url}panel/panel-menu.sh && chmod +x panel-menu.sh && ./panel-menu.sh
+}
+
+#docker项目部署菜单5
+function docker-container(){
+wget -O docker-menu.sh ${repo_url}docker-container/docker-menu.sh && chmod +x docker-menu.sh && ./docker-menu.sh
+}
+
+#测试工具菜单6
+function test-tool(){
+wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+}
+
+#网站部署菜单7
+function web(){
+wget -O web-menu.sh ${repo_url}web/web-menu.sh && chmod +x web-menu.sh && ./web-menu.sh
+}
+
+#主菜单
+function start_menu(){
     clear
+    red " WJQserver Studio tools DEV" 
+    green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
+    green " FROM: https://github.com/WJQSERVER/tools-dev "
+    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
+    yellow " =================================================="
+    green " 1. 系统信息查看" 
+    green " 2. Docker一键安装"
+    green " 3. 系统工具"
+    green " 4. 面板部署" 
+    green " 5. Docker项目部署"
+    green " 6. 测试工具"
+    green " 7. 网站部署"
+    green " =================================================="
+    green " 0. 退出脚本"
+    echo
+    read -p "请输入数字:" menuNumberInput
+    case "$menuNumberInput" in
+        1 )
+           sysinfo
+	    ;;
+        2 )
+	   docker-install
+        ;;
+	    3 )
+           systools
+	    ;;
+        4 )
+	   panel
+        ;;
+	    5 )
+           docker-container
+	    ;;
+        6 )
+	   test-tool
+        ;;
+	    7 )
+           web
+	    ;;   
 
-# 定义函数来执行选项1的操作
-A() {
-    tag=debian
-    echo "正在安装debian(镜像底层为debian-slim)青龙"
-}
-
-# 定义函数来执行选项2的操作
-B() {
-    tag=latest
-    echo "正在安装latest-Alpine(镜像底层为alpine)青龙"
-}
-
-# 定义函数来执行选项3的操作
-C() {
-     tag=2.11.3
-     echo "正在安装2.11.3版本青龙(特殊版本,供老版本脚本使用)"
-}
-
-{
-    # 显示菜单
-    echo "请选择青龙版本："
-    echo "1. Debian(debian-slim)"
-    echo "2. Alpine"
-    echo "3. 2.11.3(供老脚本或对版本有要求的情况使用)"
-    echo "4. 退出"
-
-    # 读取用户输入
-    echo -n "请输入选项对应的编号: "
-    read choice
-
-    # 根据用户输入执行相应的操作
-    case $choice in
-        1)
-            A
-            ;;
-        2)
-            B
-            ;;
-        3)
-            C
-            ;;
-        4)
-            echo "再见！"
-            exit
-            ;;
-        *)
-            echo "使用默认TAG安装"
-            tag=latest
-            ;;
+        0 )
+            exit 1
+        ;;
+	
+        * )
+            clear
+            red "请输入正确数字 !"
+            start_menu
+        ;;
     esac
 }
-
-# 从用户输入中获取容器端口
-read -p "请输入容器端口: " PORT
-
-#进入目录
-cd /root/data/docker_data/qinglong
-
-# 创建 docker-compose.yml 文件
-cat > docker-compose.yml <<EOF
-version: '2'
-services:
-  web:
-    image: whyour/qinglong:$tag  
-    volumes:
-      - ./data:/ql/data
-    ports:
-      - "$PORT:5700"
-    environment:
-      # 部署路径非必须，以斜杠开头和结尾，比如 /test/
-      QlBaseUrl: '/'
-    restart: unless-stopped    
-EOF
-
-# 启动容器
-cd /root/data/docker_data/qinglong
-docker-compose up -d
-
-# 提示服务访问地址
-echo "服务已成功启动！"
-echo "请访问以下地址来访问您的服务："
-echo "http://<服务器IP>:$PORT"
+start_menu "first"

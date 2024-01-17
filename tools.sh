@@ -9,7 +9,20 @@ echo "使用本程序所造成的任何损失或损害，作者不承担任何�
 echo "当前版本为V.0.2-BETA,BETA仅供测试使用。"
 
 #BETA版
-repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/"
+repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"
+
+# 检查配置文件是否存在
+conf_file="repo_url.conf"
+if [ ! -f "$conf_file" ]; then
+    # 创建配置文件并写入变量
+    echo "repo_url=$repo_url" > "$conf_file"
+else
+    # 配置文件已存在，不进行任何操作
+    echo "配置文件已存在"
+fi
+
+# 导入配置文件
+source "repo_url.conf"
 
 # 显示确认提示
 read -p "您是否同意上述免责声明？(y/n): " confirm
