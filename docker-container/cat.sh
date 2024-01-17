@@ -38,7 +38,7 @@ services:
 EOF
 
 # 启动容器
-docker-compose up -d
+docker-compose up --build -d
 
 # 提示服务访问地址
 echo "Clash已成功启动！"
