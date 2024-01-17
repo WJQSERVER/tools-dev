@@ -40,7 +40,10 @@ op5(){
 wget -O uptime-kuma.sh ${repo_url}docker-container/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
 }
 
-#
+#cat
+cat(){
+wget -O cat.sh ${repo_url}docker-container/cat.sh && chmod +x cat.sh && ./cat.sh    
+}
 
 # 显示菜单
 echo "请选择一个选项："
