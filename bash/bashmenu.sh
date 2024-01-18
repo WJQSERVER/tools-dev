@@ -86,6 +86,7 @@ function start_menu(){
     green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
+    red " 本脚本仅用于链接到其他作者的脚本，不做任何保证 "
     yellow " =================================================="
     green " 1. SKY-BOX_BlueSkyXN综合工具箱" 
     green " 2. 科技Lion的脚本"
