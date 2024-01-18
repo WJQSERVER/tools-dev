@@ -30,9 +30,9 @@ function sysinfo(){
 wget -O sysinfo.sh ${repo_url}sysinfo.sh && chmod +x sysinfo.sh && ./sysinfo.sh
 }
 
-#安装docker2
-function docker-install(){
-wget -O docker-install.sh ${repo_url}docker-install.sh && chmod +x docker-install.sh && ./docker-install.sh
+#docker管理2
+function docker-manager(){
+wget -O docker-manager-menu.sh ${repo_url}docker-manager/docker-manager-menu.sh && chmod +x docker-manager-menu.sh && ./docker-manager-menu.sh
 }
 
 #系统工具菜单3
@@ -82,21 +82,21 @@ function start_menu(){
     case "$menuNumberInput" in
         1 )
            sysinfo
-	;;
+	    ;;
         2 )
-	   docker-install
+	       docker-manager
         ;;
-	3 )
+	    3 )
            systools
-	;;
+	    ;;
         4 )
-	   panel
+	       panel
         ;;
-	5 )
+	    5 )
            docker-container
-	;;
+	    ;;
         6 )
-	   test-tool
+	       test-tool
         ;;
 	7 )
            web
