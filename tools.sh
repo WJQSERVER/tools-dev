@@ -101,7 +101,7 @@ function start_menu(){
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
     green " 1. 系统信息查看" 
-    green " 2. Docker一键安装"
+    green " 2. Docker管理"
     green " 3. 系统工具"
     green " 4. 面板部署" 
     green " 5. Docker项目部署"
