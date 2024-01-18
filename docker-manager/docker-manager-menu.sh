@@ -30,42 +30,42 @@ function docker-install(){
 
 }
 
-#查看Docker状
+#查看Docker状态
 function docker-info(){
 
 }
 
-#
+#Docker容器管理
 function docker-container(){
 
 }
 
-#
+#Docker镜像管理
 function docker-image(){
 
 }
 
-#
+#Docker网络管理
 function docker-network(){
 
 }
 
-#
+#Docker卷管理
 function docker-volume(){
 
 }
 
-#
+#清理未使用Docker资源
 function docker-rm-unused(){
 
 }
 
-#
+#Docker一键卸载
 function docker-remove(){
 
 }
 
-#
+#返回主界面(跳过条款)
 function back-a(){
 
 }
@@ -91,7 +91,7 @@ function start_menu(){
     yellow " =================================================="
     green " 8. Docker一键卸载"
     yellow " =================================================="
-    green " 0. 退出脚本"
+    green " 0. 返回主界面"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
