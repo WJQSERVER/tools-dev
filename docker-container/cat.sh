@@ -11,7 +11,7 @@ fi
 # 创建目录
 mkdir -p /root/data/docker_data/clash
 cd /root/data/docker_data/clash
-
+echo " /ᐠ｡ꞈ｡ᐟ\ "
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
 version: '3'
@@ -41,6 +41,7 @@ EOF
 docker-compose up --build -d
 
 # 提示服务访问地址
-echo "Clash已成功启动！"
+echo " /ᐠ｡ꞈ｡ᐟ\ Clash已成功启动！ /ᐠ｡ꞈ｡ᐟ\ "
+echo "请修改目录下的config.yaml"
 echo "请访问以下地址来访问您的服务："
 echo "http:/<服务器IP>:7880"
