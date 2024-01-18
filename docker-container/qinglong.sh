@@ -8,19 +8,19 @@ cd /root/data/docker_data/qinglong
     clear
 
 # 定义函数来执行选项1的操作
-A() {
+debian() {
     tag=debian
     echo "正在安装debian(镜像底层为debian-slim)青龙"
 }
 
 # 定义函数来执行选项2的操作
-B() {
+alpine() {
     tag=latest
     echo "正在安装latest-Alpine(镜像底层为alpine)青龙"
 }
 
 # 定义函数来执行选项3的操作
-C() {
+old() {
      tag=2.11.3
      echo "正在安装2.11.3版本青龙(特殊版本,供老版本脚本使用)"
 }
@@ -40,13 +40,13 @@ C() {
     # 根据用户输入执行相应的操作
     case $choice in
         1)
-            A
+            debian
             ;;
         2)
-            B
+            alpine
             ;;
         3)
-            C
+            old
             ;;
         4)
             echo "再见！"
