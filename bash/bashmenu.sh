@@ -44,14 +44,14 @@ blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
 
-#系统信息1
-function sysinfo(){
-wget -O sysinfo.sh ${repo_url}sysinfo.sh && chmod +x sysinfo.sh && ./sysinfo.sh
+#SKY-BOX
+function skybox(){
+wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh && chmod +x box.sh && clear && ./box.sh
 }
 
-#安装docker2
-function docker-install(){
-wget -O docker-install.sh ${repo_url}docker-install.sh && chmod +x docker-install.sh && ./docker-install.sh
+#科技Lion
+function kejilion(){
+curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh
 }
 
 #系统工具菜单3
@@ -71,12 +71,12 @@ wget -O docker-menu.sh ${repo_url}docker-container/docker-menu.sh && chmod +x do
 
 #测试工具菜单6
 function test-tool(){
-wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+
 }
 
 #网站部署菜单7
 function web(){
-wget -O web-menu.sh ${repo_url}web/web-menu.sh && chmod +x web-menu.sh && ./web-menu.sh
+
 }
 
 #主菜单
@@ -87,42 +87,42 @@ function start_menu(){
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
-    green " 1. 系统信息查看" 
-    green " 2. Docker一键安装"
-    green " 3. 系统工具"
-    green " 4. 面板部署" 
-    green " 5. Docker项目部署"
-    green " 6. 测试工具"
-    green " 7. 网站部署"
+    green " 1. SKY-BOX_BlueSkyXN综合工具箱" 
+    green " 2. 科技Lion的脚本"
+    green " 3. XX"
+    green " 4. XX" 
+    green " 5. XX"
+    green " 6. XX"
+    green " 7. XX"
     green " =================================================="
     green " 0. 退出脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           sysinfo
+           skybox
 	    ;;
         2 )
-	   docker-install
+	       kejilion
         ;;
 	    3 )
            systools
 	    ;;
         4 )
-	   panel
+	       panel
         ;;
 	    5 )
            docker-container
 	    ;;
         6 )
-	   test-tool
+	       test-tool
         ;;
 	    7 )
            web
 	    ;;   
 
         0 )
-            exit 1
+           exit 1
         ;;
 	
         * )
