@@ -18,7 +18,7 @@ if [ ! -f "$conf_file" ]; then
     echo "repo_url=$repo_url" > "$conf_file"
 else
     # 配置文件已存在，不进行任何操作
-    echo "配置文件已存在"
+    
 fi
 
 # 导入配置文件
