@@ -61,7 +61,7 @@ wget -O user_management.sh ${repo_url}systools/user_management.sh && chmod +x us
 
 #新建ssh
 12(){
-    
+wget -O ssh_connect.sh ${repo_url}systools/ssh_connect.sh && chmod +x ssh_connect.sh && ./ssh_connect.sh    
 }
 
 #重启
@@ -81,8 +81,9 @@ echo "6. 修改时区"
 echo "7. 开启UFW防火墙"
 echo "8. 修改SWAP虚拟内存设置"
 echo "9. 修改DNS"
-echo "10. 网络侧信息查看"
-echo "11. 用户管理"
+echo "10.网络侧信息查看"
+echo "11.用户管理"
+echo "12.新建SSH连接"
 echo "0. 退出"
 echo "=========================================="
 echo "99. 重启"
@@ -127,6 +128,9 @@ case $choice in
     11)
         11
         ;;
+    12)
+        12
+        ;;    
     99)
         99
         ;;
