@@ -17,13 +17,27 @@ read -p "请输入容器端口: " PORT
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
-#read
+version: "2"
+services:
+  adguardhome:
+    image: adguard/adguardhome
+    container_name: adguardhome
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 3002:80/tcp #初装配置端口
+      - 3000:3000/tcp #管理端口
+    volumes:
+      - ./workdir:/opt/adguardhome/work
+      - ./confdir:/opt/adguardhome/conf
+    restart: unless-stopped
 EOF
 
 # 启动容器
 docker-compose up -d
 
 # 提示服务访问地址
-echo "服务已成功启动！"
+echo "服务已部署"
 echo "请访问以下地址来访问您的服务："
-echo "http:/<服务器IP>:$PORT"
+echo "初装配置：http:/<服务器IP>:3002"
+echo "管理配置：http:/<服务器IP>:3000"
