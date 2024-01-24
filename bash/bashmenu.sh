@@ -64,21 +64,6 @@ function pve-info(){
 wget -O pve-info.sh ${repo_url}bash/pve-info.sh && chmod +x pve-info.sh && ./pve-info.sh
 }
 
-#docker项目部署菜单5
-function docker-container(){
-wget -O docker-menu.sh ${repo_url}docker-container/docker-menu.sh && chmod +x docker-menu.sh && ./docker-menu.sh
-}
-
-#测试工具菜单6
-function test-tool(){
-
-}
-
-#网站部署菜单7
-function web(){
-
-}
-
 #主菜单
 function start_menu(){
     clear
