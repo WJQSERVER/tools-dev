@@ -45,6 +45,10 @@ cat(){
 wget -O cat.sh ${repo_url}docker-container/cat.sh && chmod +x cat.sh && ./cat.sh    
 }
 
+#back
+back(){
+wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh    
+}
 # 显示菜单
 echo "请选择一个选项："
 echo "1. Nginx Proxy Manager 可视化Nginx管理面板"
@@ -52,7 +56,7 @@ echo "2. Portainer 可视化Docker管理面板"
 echo "3. Speedtest-X"
 echo "4. 青龙面板"
 echo "5. Uptime Kuma"
-echo "0. 退出"
+echo "0. 返回"
 
 # 提示用户输入选项编号
 echo -n "请输入选项对应的编号: "
@@ -79,8 +83,7 @@ case $choice in
         cat
         ;;    
     0)
-        echo "再见！"
-        exit
+        back
         ;;
     *)
         echo "无效的选项，请重新运行脚本选择。"
