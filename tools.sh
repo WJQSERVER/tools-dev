@@ -16,10 +16,6 @@ conf_file="repo_url.conf"
 if [ ! -f "$conf_file" ]; then
     # 创建配置文件并写入变量
     echo "repo_url=$repo_url" > "$conf_file"
-else
-    # 配置文件已存在，不进行任何操作
-    
-fi
 
 # 导入配置文件
 source "repo_url.conf"
@@ -130,9 +126,9 @@ function start_menu(){
         6 )
 	       test-tool
         ;;
-	7 )
+	    7 )
            web
-	;;   
+	    ;;   
 
         0 )
             exit 1
