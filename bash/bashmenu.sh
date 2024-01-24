@@ -60,8 +60,8 @@ wget -q -O /root/pve_source.tar.gz 'https://bbs.x86pi.cn/file/topic/2023-11-28/f
 }
 
 #PVE信息补充4
-function panel(){
-wget -O panel-menu.sh ${repo_url}panel/panel-menu.sh && chmod +x panel-menu.sh && ./panel-menu.sh
+function pve-info(){
+wget -O pve-info.sh ${repo_url}bash/pve-info.sh && chmod +x pve-info.sh && ./pve-info.sh
 }
 
 #docker项目部署菜单5
@@ -107,10 +107,10 @@ function start_menu(){
 	       kejilion
         ;;
 	    3 )
-           systools
+           pve-source
 	    ;;
         4 )
-	       panel
+	       pve-info
         ;;
 	    5 )
            docker-container
