@@ -54,12 +54,12 @@ function kejilion(){
 curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh
 }
 
-#系统工具菜单3
-function systools(){
-wget -O systools-menu.sh ${repo_url}systools/systools-menu.sh && chmod +x systools-menu.sh && ./systools-menu.sh
+#PVE系统工具3
+function pve-source(){
+wget -q -O /root/pve_source.tar.gz 'https://bbs.x86pi.cn/file/topic/2023-11-28/file/01ac88d7d2b840cb88c15cb5e19d4305b2.gz' && tar zxvf /root/pve_source.tar.gz && /root/./pve_source
 }
 
-#面板部署菜单4
+#PVE信息补充4
 function panel(){
 wget -O panel-menu.sh ${repo_url}panel/panel-menu.sh && chmod +x panel-menu.sh && ./panel-menu.sh
 }
@@ -90,8 +90,8 @@ function start_menu(){
     yellow " =================================================="
     green " 1. SKY-BOX_BlueSkyXN综合工具箱" 
     green " 2. 科技Lion的脚本"
-    green " 3. XX"
-    green " 4. XX" 
+    green " 3. PVE-source(by Jazz)"
+    green " 4. PVE信息补充脚本" 
     green " 5. XX"
     green " 6. XX"
     green " 7. XX"
