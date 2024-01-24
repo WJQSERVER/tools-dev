@@ -40,6 +40,11 @@ op5(){
 wget -O uptime-kuma.sh ${repo_url}docker-container/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
 }
 
+#adguardhome
+op6(){
+wget -O adguard-home.sh ${repo_url}docker-container/adguard-home.sh && chmod +x adguard-home.sh && ./adguard-home.sh
+}
+
 #cat
 cat(){
 wget -O cat.sh ${repo_url}docker-container/cat.sh && chmod +x cat.sh && ./cat.sh    
@@ -79,6 +84,9 @@ case $choice in
     5)
         op5
         ;;
+    6)
+        op6
+        ;;    
     99)
         cat
         ;;    
