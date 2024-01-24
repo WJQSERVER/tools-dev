@@ -59,6 +59,11 @@ wget -O networkinfo.sh ${repo_url}systools/networkinfo.sh && chmod +x networkinf
 wget -O user_management.sh ${repo_url}systools/user_management.sh && chmod +x user_management.sh && ./user_management.sh
 }
 
+#新建ssh
+12(){
+    
+}
+
 #重启
 99() {
 reboot

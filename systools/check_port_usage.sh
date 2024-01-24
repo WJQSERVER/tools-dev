@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt install lsof
+
 # 提示用户输入端口号
 read -p "请输入要查看的端口号: " port
 
