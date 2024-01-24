@@ -16,6 +16,7 @@ conf_file="repo_url.conf"
 if [ ! -f "$conf_file" ]; then
     # 创建配置文件并写入变量
     echo "repo_url=$repo_url" > "$conf_file"
+fi
 
 # 导入配置文件
 source "repo_url.conf"
@@ -88,6 +89,11 @@ function web(){
 wget -O web-menu.sh ${repo_url}web/web-menu.sh && chmod +x web-menu.sh && ./web-menu.sh
 }
 
+#更多脚本8
+function bash(){
+wget -O bashmenu.sh ${repo_url}bash/bashmenu.sh && chmod +x bashmenu.sh && ./bashmenu.sh    
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -95,7 +101,7 @@ function start_menu(){
     green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    yellow " =================================================="
+    green " =================================================="
     green " 1. 系统信息查看" 
     green " 2. Docker管理"
     green " 3. 系统工具"
@@ -103,6 +109,8 @@ function start_menu(){
     green " 5. Docker项目部署"
     green " 6. 测试工具"
     green " 7. 网站部署"
+    green " =================================================="
+    green " 8. 更多脚本"
     green " =================================================="
     green " 0. 退出脚本"
     echo
@@ -128,7 +136,10 @@ function start_menu(){
         ;;
 	    7 )
            web
-	    ;;   
+	    ;;
+        8 )
+           bash
+        ;;      
 
         0 )
             exit 1
