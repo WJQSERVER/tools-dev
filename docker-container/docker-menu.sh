@@ -1,99 +1,125 @@
-#!/bin/bash
+#! /bin/bash
+# By WJQSERVER-STUDIO_WJQSERVER
+#https://github.com/WJQSERVER/tools-dev
 
-# 清空屏幕
-clear
-
-# 检查是否已经安装 Docker 和 Docker Compose
-if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; then
-    echo "请先安装 Docker 和 Docker Compose。"
-    exit 1
-fi
-
-# 清空屏幕
-clear
+# 显示免责声明
+echo "免责声明：请阅读并同意以下条款才能继续使用本脚本。"
+echo "本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
+echo "使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
+echo "当前版本为V.0.2-BETA。"
 
 # 导入配置文件
 source "repo_url.conf"
 
-# nginx proxy manager
-op1() {
+#彩色
+red(){
+    echo -e "\033[31m\033[01m$1\033[0m"
+}
+green(){
+    echo -e "\033[32m\033[01m$1\033[0m"
+}
+yellow(){
+    echo -e "\033[33m\033[01m$1\033[0m"
+}
+blue(){
+    echo -e "\033[34m\033[01m$1\033[0m"
+}
+
+#nginx proxy manager
+function nginxproxymanager(){
 wget -O nginxproxymanager.sh ${repo_url}docker-container/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
 }
 
-# portainer
-op2() {
+#portainer
+function portainer(){
 wget -O portainer.sh ${repo_url}docker-container/portainer.sh && chmod +x portainer.sh && ./portainer.sh
 }
 
-# speedtest-x
-op3() {
+#
+function speedtest-x(){
 wget -O speedtest-x.sh ${repo_url}docker-container/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
 }
 
-#qinglong
-op4(){
+#
+function qinglong(){
 wget -O qinglong.sh ${repo_url}docker-container/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
 }
 
-#uptime-kuma
-op5(){
+#
+function uptime-kuma(){
 wget -O uptime-kuma.sh ${repo_url}docker-container/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
 }
 
-#adguardhome
-op6(){
+#
+function adguardhome(){
 wget -O adguard-home.sh ${repo_url}docker-container/adguard-home.sh && chmod +x adguard-home.sh && ./adguard-home.sh
 }
 
-#cat
-cat(){
-wget -O cat.sh ${repo_url}docker-container/cat.sh && chmod +x cat.sh && ./cat.sh    
+#
+function serverstatus(){
+
 }
 
-#back
-back(){
-wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh    
+#
+function sun-panel(){
+
 }
-# 显示菜单
-echo "请选择一个选项："
-echo "1. Nginx Proxy Manager 可视化Nginx管理面板"
-echo "2. Portainer 可视化Docker管理面板"
-echo "3. Speedtest-X"
-echo "4. 青龙面板"
-echo "5. Uptime Kuma"
-echo "0. 返回"
 
-# 提示用户输入选项编号
-echo -n "请输入选项对应的编号: "
-read choice
+#主菜单
+function start_menu(){
+    clear
+    red " WJQserver Studio tools BETA" 
+    green " 由WJQserver Studio提供的快捷工具箱 BETA版 "
+    green " FROM: https://github.com/WJQSERVER/tools-dev "
+    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
+    green " =================================================="
+    green " 1. Nginx Proxy Manager 可视化Nginx管理面板" 
+    green " 2. Portainer 可视化Docker管理面板"
+    green " 3. Speedtest-X 测速面板"
+    green " 4. 青龙面板" 
+    green " 5. Uptime-Kuma"
+    green " 6. ADGuard Home 去广告,DNS面板"
+    green " 7. ServerStatus探针"
+    green " 8. Sun Panel NAS面板"
+    green " =================================================="
+    green " 0. 退出脚本"
+    echo
+    read -p "请输入数字:" menuNumberInput
+    case "$menuNumberInput" in
+        1 )
+           nginxproxymanager
+	    ;;
+        2 )
+	       portainer
+        ;;
+	    3 )
+           speedtest-x
+	    ;;
+        4 )
+	       qinglong
+        ;;
+	    5 )
+           uptime-kuma
+	    ;;
+        6 )
+	       adguardhome
+        ;;
+	    7 )
+           serverstatus
+	    ;;
+        8 )
+           sun-panel
+        ;;
 
-# 根据用户输入执行相应的操作
-case $choice in
-    1)
-        op1
+        0 )
+            exit 1
         ;;
-    2)
-        op2
+	
+        * )
+            clear
+            red "请输入正确数字 !"
+            start_menu
         ;;
-    3)
-        op3
-        ;;
-    4)
-        op4
-        ;;
-    5)
-        op5
-        ;;
-    6)
-        op6
-        ;;    
-    99)
-        cat
-        ;;    
-    0)
-        back
-        ;;
-    *)
-        echo "无效的选项，请重新运行脚本选择。"
-        ;;
-esac
+    esac
+}
+start_menu "first"
