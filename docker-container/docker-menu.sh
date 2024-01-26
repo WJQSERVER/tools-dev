@@ -57,12 +57,12 @@ wget -O adguard-home.sh ${repo_url}docker-container/adguard-home.sh && chmod +x 
 
 #
 function serverstatus(){
-
+wget -O serverstatus.sh ${repo_url}docker-container/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
 }
 
 #
 function sun-panel(){
-
+wget -O sun-panel.sh ${repo_url}docker-container/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
 }
 
 #主菜单
