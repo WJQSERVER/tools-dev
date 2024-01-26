@@ -96,7 +96,7 @@ wget -O bashmenu.sh ${repo_url}bash/bashmenu.sh && chmod +x bashmenu.sh && ./bas
 
 #BBR管理9
 function bbr(){
-
+wget -O bbr-manager.sh ${repo_url}systools/bbr-manager.sh && chmod +x bbr-manager.sh && ./bbr-manager.sh
 }
 
 #主菜单
@@ -146,7 +146,10 @@ function start_menu(){
 	    ;;
         8 )
            bash
-        ;;      
+        ;;
+        9 )
+           bbr
+        ;;
 
         0 )
             exit 1
