@@ -1,56 +1,105 @@
-#!/bin/bash
+#! /bin/bash
+# By WJQSERVER-STUDIO_WJQSERVER
+#https://github.com/WJQSERVER/tools-dev
 
-# 清空屏幕
-clear
+# 显示免责声明
+echo "免责声明：请阅读并同意以下条款才能继续使用本脚本。"
+echo "本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
+echo "使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
+echo "当前版本为V.0.2-BETA。"
 
 # 导入配置文件
 source "repo_url.conf"
 
-# 定义函数来执行选项1的操作
-option1() {
-wget -O bt-install.sh ${repo_url}panel/bt-install.sh && chmod +x bt-install.sh && ./bt-install.sh
+#彩色
+red(){
+    echo -e "\033[31m\033[01m$1\033[0m"
+}
+green(){
+    echo -e "\033[32m\033[01m$1\033[0m"
+}
+yellow(){
+    echo -e "\033[33m\033[01m$1\033[0m"
+}
+blue(){
+    echo -e "\033[34m\033[01m$1\033[0m"
 }
 
-# 定义函数来执行选项2的操作
-option2() {
-wget -O 1panel-install.sh ${repo_url}panel/1panel-install.sh && chmod +x 1panel-install.sh && ./1panel-install.sh
+#1Panel面板
+function 1panel(){
+curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh && sudo bash quick_start.sh
 }
 
-# 定义函数来执行选项3的操作
-option3() {
-wget -O serverstatus.sh ${repo_url}panel/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
+#宝塔面板
+function btpanel(){
+if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec
 }
 
-    # 清空屏幕
+#aaPanel面板
+function aapanel(){
+if [ -f /etc/os-release ]; then
+    # 从os-release文件中获取发行版信息
+    source /etc/os-release
+    if [[ $ID == "centos" ]]; then
+        echo "CentOS"
+        yum install -y wget && wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh && bash install.sh aapanel
+    elif [[ $ID == "ubuntu" || $ID == "deepin" ]]; then
+        echo "Ubuntu/Deepin"
+        wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
+    elif [[ $ID == "debian" ]]; then
+        echo "Debian"
+        wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && bash install.sh aapanel
+    else
+        echo "不支持的发行版"
+    fi
+else
+    echo "无法确定是否支持此发行版"
+fi
+}
+
+#CasaOS面板
+function casaos(){
+curl -fsSL https://get.casaos.io | sudo bash
+}
+
+#主菜单
+function start_menu(){
     clear
-
-    # 显示菜单
-    echo "请选择一个选项："
-    echo "1. 宝塔面板"
-    echo "2. 1panel面板"
-    echo "3. ServerStatus面板/探针"
-    echo "4. 退出"
-
-    # 提示用户输入选项编号
-    echo -n "请输入选项对应的编号: "
-    read choice
-
-    # 根据用户输入执行相应的操作
-    case $choice in
-        1)
-            option1
-            ;;
-        2)
-            option2
-            ;;
-        3)
-            option3
-            ;;
-        4)
-            echo "再见！"
-            exit
-            ;;
-        *)
-            echo "无效的选项，请重新选择。"
-            ;;
+    red " WJQserver Studio tools BETA" 
+    green " 由WJQserver Studio提供的快捷工具箱 BETA版 "
+    green " FROM: https://github.com/WJQSERVER/tools-dev "
+    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
+    green " =================================================="
+    green " 1. 1Panel面板" 
+    green " 2. 宝塔面板"
+    green " 3. aaPanel面板(宝塔国际版)"
+    green " 4. CasaOS面板" 
+    green " =================================================="
+    green " 0. 退出脚本"
+    echo
+    read -p "请输入数字:" menuNumberInput
+    case "$menuNumberInput" in
+        1 )
+           1panel
+	    ;;
+        2 )
+	       btpanel
+        ;;
+	    3 )
+           aapanel
+	    ;;
+        4 )
+	       casaos
+        ;;
+        0 )
+           exit 1
+        ;;
+	
+        * )
+            clear
+            red "请输入正确数字 !"
+            start_menu
+        ;;
     esac
+}
+start_menu "first"

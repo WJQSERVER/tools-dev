@@ -94,6 +94,11 @@ function bash(){
 wget -O bashmenu.sh ${repo_url}bash/bashmenu.sh && chmod +x bashmenu.sh && ./bashmenu.sh    
 }
 
+#BBR管理9
+function bbr(){
+wget -O bbr-manager.sh ${repo_url}systools/bbr-manager.sh && chmod +x bbr-manager.sh && ./bbr-manager.sh
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -111,6 +116,8 @@ function start_menu(){
     green " 7. 网站部署"
     green " =================================================="
     green " 8. 更多脚本"
+    green " =================================================="
+    green " 9. BBR管理面板"
     green " =================================================="
     green " 0. 退出脚本"
     echo
@@ -139,7 +146,10 @@ function start_menu(){
 	    ;;
         8 )
            bash
-        ;;      
+        ;;
+        9 )
+           bbr
+        ;;
 
         0 )
             exit 1
