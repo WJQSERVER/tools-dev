@@ -67,7 +67,7 @@ function start_menu(){
     green " 由WJQserver Studio提供的快捷工具箱 BETA版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    yellow " =================================================="
+    green " =================================================="
     green " 1. " 
     green " 2. "
     green " 3. "
