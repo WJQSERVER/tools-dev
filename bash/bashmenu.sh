@@ -2,6 +2,8 @@
 # By WJQSERVER-STUDIO_WJQSERVER
 #https://github.com/WJQSERVER/tools-dev
 
+clear
+
 # 显示免责声明
 echo "免责声明：请阅读并同意以下条款才能继续使用本程序。"
 echo "本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
