@@ -9,11 +9,8 @@ if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; the
 fi
 
 # 创建目录
-mkdir -p /root/data/docker_data/*
-cd /root/data/docker_data/*
-
-# 从用户输入中获取容器端口
-read -p "请输入容器端口: " PORT
+mkdir -p /root/data/docker_data/adguardhome
+cd /root/data/docker_data/adguardhome
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
