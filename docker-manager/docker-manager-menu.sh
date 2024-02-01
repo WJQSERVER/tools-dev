@@ -8,7 +8,7 @@ clear
 echo "免责声明：请阅读并同意以下条款才能继续使用本程序。"
 echo "本程序仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo "使用本程序所造成的任何损失或损害，作者不承担任何责任。"
-echo "当前版本为V.0.3-BETA"
+echo "当前版本为V.0.4-BETA"
 
 # 导入配置文件
 source "repo_url.conf"
@@ -76,7 +76,7 @@ wget -O tools-a.sh ${repo_url}tools-a.sh && chmod +x tools-a.sh && ./tools-a.sh
 function start_menu(){
     clear
     red " WJQserver Studio tools BETA" 
-    green " 由WJQserver Studio提供的快捷工具箱 BETA版 "
+    green " WJQserver Studio的快捷工具箱 BETA版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="

@@ -94,9 +94,9 @@ function bash(){
 wget -O bashmenu.sh ${repo_url}bash/bashmenu.sh && chmod +x bashmenu.sh && ./bashmenu.sh    
 }
 
-#BBR管理9
-function bbr(){
-wget -O bbr-manager.sh ${repo_url}systools/bbr-manager.sh && chmod +x bbr-manager.sh && ./bbr-manager.sh
+#代理节点管理9
+function proxy(){
+wget -O proxy-menu.sh ${repo_url}proxy/proxy-menu.sh && chmod +x proxy-menu.sh && ./proxy-menu.sh
 }
 
 #主菜单
@@ -116,6 +116,8 @@ function start_menu(){
     green " 7. 网站部署"
     green " =================================================="
     green " 8. 更多脚本"
+    green " =================================================="
+    green " 9. 代理部署"
     green " =================================================="
     green " 0. 退出脚本"
     echo
@@ -146,7 +148,7 @@ function start_menu(){
            bash
         ;;
         9 )
-           bbr
+           proxy
         ;;
 
         0 )
