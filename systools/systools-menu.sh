@@ -233,7 +233,7 @@ wget -O create_user.sh ${repo_url}systools/create_user.sh && chmod +x create_use
 }
 
 #生成强密码
-function gennerate_strong_password(){
+function generate_strong_password(){
 wget -O generate_strong_password.sh ${repo_url}systools/generate_strong_password.sh && chmod +x generate_strong_password.sh && ./generate_strong_password.sh    
 }
 
@@ -257,39 +257,76 @@ function start_menu(){
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     green " =================================================="
-    green " 1. " 
-    green " 2. "
-    green " 3. "
-    green " 4. " 
-    green " 5. "
-    green " 6. "
-    green " 7. "
+    green " 1. 修改主机名" 
+    green " 2. 修改时区"
+    green " =================================================="
+    green " 3. IPv4/6优先级切换"
+    green " 4. 网络侧信息查看" 
+    green " 5. 修改DNS"
+    green " 6. BBR管理面板"
+    green " 7. 端口占用检测"
+    green " 8. UFW防火墙"
+    green " =================================================="
+    green " 9. SWAP虚拟内存设置"
+    green " =================================================="
+    green " 10.用户管理"
+    green " 11.修改root密码"
+    green " 12.创建普通用户"
+    green " 13.生成强密码"
+    green " =================================================="
+    green " 14.新建SSH连接"
+    green " =================================================="
+    green " 99.重启"
     green " =================================================="
     green " 0. 退出脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           #
+           change_hostname
 	    ;;
         2 )
-	       #
+	       timezone
         ;;
 	    3 )
-           #
+           ipv-switch
 	    ;;
         4 )
-	       #
+	       networkinfo
         ;;
 	    5 )
-           #
+           change_dns
 	    ;;
         6 )
-	       #
+	       bbr-manager
         ;;
 	    7 )
-           #
-	    ;;   
+           check_port_usage
+	    ;;
+        8 )
+           ufw
+        ;;
+        9 )
+           swap
+        ;;
+        10)
+           user_management
+        ;;
+        11)
+           change-root-password
+        ;;
+        12)
+           create_user
+        ;;
+        13)
+           generate_strong_password
+        ;;
+        14)
+           ssh_connect
+        ;;
+        99)
+           reboot
+        ;;         
 
         0 )
             exit 1
