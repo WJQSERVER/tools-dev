@@ -103,7 +103,7 @@ wget -O bbr-manager.sh ${repo_url}systools/bbr-manager.sh && chmod +x bbr-manage
 function start_menu(){
     clear
     red " WJQserver Studio tools DEV" 
-    green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
+    green " WJQserver Studio的快捷工具箱 BETA版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     green " =================================================="
