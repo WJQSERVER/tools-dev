@@ -29,42 +29,42 @@ blue(){
 
 #nginx proxy manager
 function nginxproxymanager(){
-wget -O nginxproxymanager.sh ${repo_url}docker-container/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
+wget -O nginxproxymanager.sh ${repo_url}program/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
 }
 
 #portainer
 function portainer(){
-wget -O portainer.sh ${repo_url}docker-container/portainer.sh && chmod +x portainer.sh && ./portainer.sh
+wget -O portainer.sh ${repo_url}program/portainer.sh && chmod +x portainer.sh && ./portainer.sh
 }
 
 #
 function speedtest-x(){
-wget -O speedtest-x.sh ${repo_url}docker-container/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
+wget -O speedtest-x.sh ${repo_url}program/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
 }
 
 #
 function qinglong(){
-wget -O qinglong.sh ${repo_url}docker-container/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
+wget -O qinglong.sh ${repo_url}program/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
 }
 
 #
 function uptime-kuma(){
-wget -O uptime-kuma.sh ${repo_url}docker-container/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
+wget -O uptime-kuma.sh ${repo_url}program/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
 }
 
 #
 function adguardhome(){
-wget -O adguard-home.sh ${repo_url}docker-container/adguard-home.sh && chmod +x adguard-home.sh && ./adguard-home.sh
+wget -O adguard-home.sh ${repo_url}program/adguard-home.sh && chmod +x adguard-home.sh && ./adguard-home.sh
 }
 
 #
 function serverstatus(){
-wget -O serverstatus.sh ${repo_url}docker-container/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
+wget -O serverstatus.sh ${repo_url}program/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
 }
 
 #
 function sun-panel(){
-wget -O sun-panel.sh ${repo_url}docker-container/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
+wget -O sun-panel.sh ${repo_url}program/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
 }
 
 #主菜单
