@@ -67,6 +67,11 @@ function sun-panel(){
 wget -O sun-panel.sh ${repo_url}program/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
 }
 
+#
+function cat(){
+wget -O cat.sh ${repo_url}program/cat.sh && chmod +x cat.sh && ./cat.sh    
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -83,6 +88,8 @@ function start_menu(){
     green " 6. ADGuard Home 去广告,DNS面板"
     green " 7. ServerStatus探针"
     green " 8. Sun Panel NAS面板"
+    green " =================================================="
+    green " 9. Docker Clash"
     green " =================================================="
     green " 0. 退出脚本"
     echo
@@ -112,6 +119,9 @@ function start_menu(){
         8 )
            sun-panel
         ;;
+        9 )
+           cat
+        ;;   
 
         0 )
             exit 1
