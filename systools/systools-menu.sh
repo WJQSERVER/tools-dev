@@ -153,6 +153,7 @@ echo "免责声明：请阅读并同意以下条款才能继续使用本脚本�
 echo "本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo "使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
 echo "当前版本为V.0.3-BETA"
+sleep 1
 
 # 导入配置文件
 source "repo_url.conf"
@@ -234,6 +235,18 @@ wget -O create_user.sh ${repo_url}systools/create_user.sh && chmod +x create_use
 #生成强密码
 function gennerate_strong_password(){
 wget -O generate_strong_password.sh ${repo_url}systools/generate_strong_password.sh && chmod +x generate_strong_password.sh && ./generate_strong_password.sh    
+}
+
+#新建SSH连接
+function ssh_connect(){
+wget -O ssh_connect.sh ${repo_url}systools/ssh_connect.sh && chmod +x ssh_connect.sh && ./ssh_connect.sh    
+}
+
+#重启
+function reboot(){
+echo "即将重启"
+sleep 3    
+reboot    
 }
 
 #主菜单
