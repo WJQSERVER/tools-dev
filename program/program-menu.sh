@@ -8,7 +8,7 @@ clear
 echo "免责声明：请阅读并同意以下条款才能继续使用本脚本。"
 echo "本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo "使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
-echo "当前版本为V.0.3-BETA。"
+echo "当前版本为V.0.3-BETA"
 
 # 导入配置文件
 source "repo_url.conf"
@@ -29,42 +29,47 @@ blue(){
 
 #nginx proxy manager
 function nginxproxymanager(){
-wget -O nginxproxymanager.sh ${repo_url}docker-container/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
+wget -O nginxproxymanager.sh ${repo_url}program/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
 }
 
 #portainer
 function portainer(){
-wget -O portainer.sh ${repo_url}docker-container/portainer.sh && chmod +x portainer.sh && ./portainer.sh
+wget -O portainer.sh ${repo_url}program/portainer.sh && chmod +x portainer.sh && ./portainer.sh
 }
 
 #
 function speedtest-x(){
-wget -O speedtest-x.sh ${repo_url}docker-container/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
+wget -O speedtest-x.sh ${repo_url}program/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
 }
 
 #
 function qinglong(){
-wget -O qinglong.sh ${repo_url}docker-container/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
+wget -O qinglong.sh ${repo_url}program/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
 }
 
 #
 function uptime-kuma(){
-wget -O uptime-kuma.sh ${repo_url}docker-container/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
+wget -O uptime-kuma.sh ${repo_url}program/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
 }
 
 #
 function adguardhome(){
-wget -O adguard-home.sh ${repo_url}docker-container/adguard-home.sh && chmod +x adguard-home.sh && ./adguard-home.sh
+wget -O adguard-home.sh ${repo_url}program/adguard-home.sh && chmod +x adguard-home.sh && ./adguard-home.sh
 }
 
 #
 function serverstatus(){
-wget -O serverstatus.sh ${repo_url}docker-container/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
+wget -O serverstatus.sh ${repo_url}program/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
 }
 
 #
 function sun-panel(){
-wget -O sun-panel.sh ${repo_url}docker-container/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
+wget -O sun-panel.sh ${repo_url}program/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
+}
+
+#
+function cat(){
+wget -O cat.sh ${repo_url}program/cat.sh && chmod +x cat.sh && ./cat.sh    
 }
 
 #主菜单
@@ -83,6 +88,8 @@ function start_menu(){
     green " 6. ADGuard Home 去广告,DNS面板"
     green " 7. ServerStatus探针"
     green " 8. Sun Panel NAS面板"
+    green " =================================================="
+    green " 9. Docker Clash"
     green " =================================================="
     green " 0. 退出脚本"
     echo
@@ -112,6 +119,9 @@ function start_menu(){
         8 )
            sun-panel
         ;;
+        9 )
+           cat
+        ;;   
 
         0 )
             exit 1

@@ -36,7 +36,7 @@ read -p "此操作将安装 wget, curl, vim 等常用软件包并进行更新。
 if [[ $choice == "y" ]]; then
   # 安装软件包
   apt update
-  sudo apt upgrade -y
+  apt upgrade -y
   apt install wget curl vim git sudo -y
 fi
 
@@ -75,8 +75,8 @@ wget -O panel-menu.sh ${repo_url}panel/panel-menu.sh && chmod +x panel-menu.sh &
 }
 
 #docker项目部署菜单5
-function docker-container(){
-wget -O docker-menu.sh ${repo_url}docker-container/docker-menu.sh && chmod +x docker-menu.sh && ./docker-menu.sh
+function program(){
+wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
 }
 
 #测试工具菜单6
@@ -103,7 +103,7 @@ wget -O bbr-manager.sh ${repo_url}systools/bbr-manager.sh && chmod +x bbr-manage
 function start_menu(){
     clear
     red " WJQserver Studio tools DEV" 
-    green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
+    green " WJQserver Studio的快捷工具箱 BETA版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     green " =================================================="
@@ -111,7 +111,7 @@ function start_menu(){
     green " 2. Docker管理"
     green " 3. 系统工具"
     green " 4. 面板部署" 
-    green " 5. Docker项目部署"
+    green " 5. 项目部署"
     green " 6. 测试工具"
     green " 7. 网站部署"
     green " =================================================="
@@ -136,7 +136,7 @@ function start_menu(){
 	       panel
         ;;
 	    5 )
-           docker-container
+           program
 	    ;;
         6 )
 	       test-tool
