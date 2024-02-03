@@ -139,7 +139,7 @@ function start_menu(){
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           change_hostname
+           hostname
 	    ;;
         2 )
 	       timezone
