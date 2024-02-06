@@ -7,8 +7,30 @@ hostname=$(hostname)
 isp_info=$(curl -s https://ipinfo.io/org)
 isp=$(echo "$isp_info" | awk '{split($0,a," "); print a[2]}')
 
+# 获取发行版具体版本名称
+pretty_name=$(grep -oP 'PRETTY_NAME="\K[^"]+' /etc/os-release)
+
 # 获取Linux版本
 linux_version=$(uname -r)
+
+# 检测虚拟化架构
+detect_virtualization_architecture() {
+    if [[ -f "/proc/1/environ" ]]; then
+        if grep -q "QEMU_VIRTUALIZATION" /proc/1/environ; then
+            virtualization_architecture="KVM"
+        elif grep -q "container=lxc" /proc/1/environ; then
+            virtualization_architecture="LXC"
+        elif grep -q "container=lxc" /proc/1/environ && [[ -f "/proc/vz/veinfo" ]]; then
+            virtualization_architecture="OpenVZ"
+        else
+            virtualization_architecture="物理机"
+        fi
+    else
+        virtualization_architecture="未知"
+    fi
+}
+
+detect_virtualization_architecture
 
 # 获取CPU架构
 cpu_arch=$(uname -m)
@@ -18,6 +40,14 @@ cpu_model=$(lscpu | grep "Model name:" | awk -F: '{print $2}' | awk '{$1=$1;prin
 
 # 获取CPU核心数
 cpu_cores=$(grep -c '^processor' /proc/cpuinfo)
+
+# 检测虚拟化支持
+virtualization_support=""
+if grep -qE 'svm|vmx' /proc/cpuinfo; then
+  virtualization_support="支持"
+else
+  virtualization_support="不支持"
+fi
 
 # 获取CPU占用率
 cpu_usage=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$3+$4)*100/($2+$3+$4+$5+$6+$7)} END {printf "%.1f", usage}')
@@ -60,10 +90,13 @@ echo "系统信息:"
 echo "---------------------------"
 echo "主机名: $hostname"
 echo "运营商: $isp"
+echo "发行版版本：$pretty_name"
 echo "Linux版本: $linux_version"
+echo "虚拟化：$virtualization_architecture"
 echo "CPU架构: $cpu_arch"
 echo "CPU型号: $cpu_model"
 echo "CPU核心数: $cpu_cores"
+echo "虚拟化支持: $virtualization_support"
 echo "CPU占用: $cpu_usage%"
 echo "物理内存：$used_mem/$total_mem ($used_percentage%)"
 echo "虚拟内存: $swap_memory"

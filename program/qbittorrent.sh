@@ -9,15 +9,32 @@ if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; the
 fi
 
 # 创建目录
-mkdir -p /root/data/docker_data/*
-cd /root/data/docker_data/*
-
-# 从用户输入中获取容器端口
-read -p "请输入容器端口: " PORT
+mkdir -p /root/data/docker_data/qbittorrent
+cd /root/data/docker_data/qbittorrent
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
-#read
+version: "2"
+services:
+  qbittorrent:
+    image: linuxserver/qbittorrent
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai # 你的时区
+      - UMASK_SET=022
+      - WEBUI_PORT=8081 # 将此处修改成你欲使用的 WEB 管理平台端口 
+    volumes:
+      - ./config:/config # 绝对路径请修改为自己的config文件夹
+      - ./downloads:/downloads # 绝对路径请修改为自己的downloads文件夹
+    ports:
+      # 要使用的映射下载端口与内部下载端口，可保持默认，安装完成后在管理页面仍然可以改成其他端口。
+      - 6881:6881 
+      - 6881:6881/udp
+      # 此处WEB UI 目标端口与内部端口务必保证相同，见问题1
+      - 8081:8081
+    restart: unless-stopped
 EOF
 
 # 启动容器
@@ -26,4 +43,5 @@ docker-compose up -d
 # 提示服务访问地址
 echo "服务已成功启动！"
 echo "请访问以下地址来访问您的服务："
-echo "http:/<服务器IP>:$PORT"
+echo "http:/<服务器IP>:8081"
+echo "默认用户名密码admin/adminadmin"
