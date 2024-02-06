@@ -37,39 +37,49 @@ function portainer(){
 wget -O portainer.sh ${repo_url}program/portainer.sh && chmod +x portainer.sh && ./portainer.sh
 }
 
-#
+#speedtest-x
 function speedtest-x(){
 wget -O speedtest-x.sh ${repo_url}program/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
 }
 
-#
+#青龙面板
 function qinglong(){
 wget -O qinglong.sh ${repo_url}program/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
 }
 
-#
+#uptime-kuma
 function uptime-kuma(){
 wget -O uptime-kuma.sh ${repo_url}program/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
 }
 
-#
+#ADGuard-Home去广告DNS
 function adguardhome(){
 wget -O adguard-home.sh ${repo_url}program/adguard-home.sh && chmod +x adguard-home.sh && ./adguard-home.sh
 }
 
-#
+#探针
 function serverstatus(){
 wget -O serverstatus.sh ${repo_url}program/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
 }
 
-#
+#NAS面板
 function sun-panel(){
 wget -O sun-panel.sh ${repo_url}program/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
 }
 
-#
+#Docker Clash
 function cat(){
 wget -O cat.sh ${repo_url}program/cat.sh && chmod +x cat.sh && ./cat.sh    
+}
+
+#雷池
+function safeline(){
+bash -c "$(curl -fsSLk https://waf-ce.chaitin.cn/release/latest/setup.sh)"    
+}
+
+#QB离线下载BT/PT
+function qbittorrent(){
+wget -O qbittorrent.sh ${repo_url}program/qbittorrent.sh && chmod +x qbittorrent.sh && ./qbittorrent.sh
 }
 
 #主菜单
@@ -89,7 +99,7 @@ function start_menu(){
     green " 7. ServerStatus探针"
     green " 8. Sun Panel NAS面板"
     green " =================================================="
-    green " 9. Docker Clash"
+    green " 99. Docker Clash"
     green " =================================================="
     green " 0. 退出脚本"
     echo
@@ -119,7 +129,7 @@ function start_menu(){
         8 )
            sun-panel
         ;;
-        9 )
+        99)
            cat
         ;;   
 
