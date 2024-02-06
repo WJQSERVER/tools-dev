@@ -5,7 +5,7 @@ V.0.4-fix1-dlc1 BETA
 ```
 wget -O tools.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/tools.sh && chmod +x tools.sh && clear && ./tools.sh
 ```
-V.0.2-fix3 BETA-CN
+V.0.4-fix1-dlc1 BETA-CN
 ```
 <pre>wget -O tools-cn.sh https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/tools-cn.sh && chmod +x tools-cn.sh && clear && ./tools-cn.sh</pre>
 ```
