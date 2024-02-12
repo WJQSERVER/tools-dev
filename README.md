@@ -7,7 +7,7 @@ wget -O tools.sh https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/tool
 ```
 V.0.4-fix1-dlc1 BETA-CN
 ```
-<pre>wget -O tools-cn.sh https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/tools-cn.sh && chmod +x tools-cn.sh && clear && ./tools-cn.sh</pre>
+wget -O tools-cn.sh https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/main/tools-cn.sh && chmod +x tools-cn.sh && clear && ./tools-cn.sh
 ```
 # 声明
 
