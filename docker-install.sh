@@ -27,7 +27,7 @@ cat > /etc/docker/daemon.json <<EOF
         "max-file": "4"
     },
     "ipv6": true,
-    "fixed-cidr-v6": "fd00:dead:beef:c0::/80",
+    "fixed-cidr-v6": "fd00:5033:200j:c0::/80",
     "experimental":true,
     "ip6tables":true
 }
