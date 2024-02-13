@@ -23,7 +23,7 @@ detect_virtualization_architecture() {
         elif grep -q "container=lxc" /proc/1/environ && [[ -f "/proc/vz/veinfo" ]]; then
             virtualization_architecture="OpenVZ"
         else
-            virtualization_architecture="物理机"
+            virtualization_architecture="物理机/无法识别"
         fi
     else
         virtualization_architecture="未知"
