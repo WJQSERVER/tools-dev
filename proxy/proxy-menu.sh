@@ -64,7 +64,7 @@ function x-ui_f(){
 bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh) 0.3.4.4
 }
 
-#X-UI_勇哥精简版(此版本有争议)
+#X-UI_勇哥精简版(此版本有争议)(闭源加密)(有挖矿嫌疑)
 function x-ui_yg(){
 wget -N https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh && bash install.sh
 }
