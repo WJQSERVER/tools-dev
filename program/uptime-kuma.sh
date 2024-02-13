@@ -11,7 +11,7 @@ data_dir="/root/data/docker_data/uptime"
 mkdir -p "$data_dir"
 
 # 提示用户输入容器端口
-read -p "请输入要映射到 Uptime Kuma 容器的端口（默认为 3000）: " container_port
+read -p "请输入需要映射的管理界面端口,默认为3000端口: " container_port
 container_port=${container_port:-3000}
 
 # 创建 Docker Compose 配置文件
