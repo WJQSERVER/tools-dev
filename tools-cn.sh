@@ -105,7 +105,7 @@ function start_menu(){
     red " WJQserver Studio tools DEV" 
     green " WJQserver Studio的快捷工具箱 BETA-CN版 "
     green " FROM: https://github.com/WJQSERVER/tools-dev "
-    green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
+    green " USE:  wget -O tools-cn.sh ${repo_url}tools-cn.sh && chmod +x tools-cn.sh && clear && ./tools-cn.sh "
     green " =================================================="
     green " 1. 系统信息查看" 
     green " 2. Docker管理"
