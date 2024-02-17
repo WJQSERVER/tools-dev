@@ -46,12 +46,12 @@ wget -O bbr-manager.sh ${repo_url}systools/bbr-manager.sh && chmod +x bbr-manage
 
 #WARP
 function warp(){
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh d
 }
 
 #WARP-GO
 function warp-go(){
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh && bash warp-go.sh
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh && bash warp-go.sh d
 }
 
 #X-UI原版

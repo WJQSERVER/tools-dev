@@ -152,7 +152,7 @@ function start_menu(){
         ;;
 
         0 )
-            exit 1
+           exit 1
         ;;
 	
         * )
