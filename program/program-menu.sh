@@ -107,6 +107,10 @@ function searxng(){
     wget -O searxng.sh ${repo_url}program/searxng.sh && chmod +x searxng.sh && ./searxng.sh
 }
 
+#Koishi恋恋机器人框架
+function koishi(){
+    
+}
 
 #主菜单
 function start_menu(){
