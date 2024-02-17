@@ -109,7 +109,7 @@ function searxng(){
 
 #Koishi恋恋机器人框架
 function koishi(){
-    
+    wget -O koishi.sh ${repo_url}program/koishi.sh && chmod +x koishi.sh && ./koishi.sh
 }
 
 #主菜单
