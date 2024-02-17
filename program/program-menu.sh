@@ -29,58 +29,84 @@ blue(){
 
 #nginx proxy manager
 function nginxproxymanager(){
-wget -O nginxproxymanager.sh ${repo_url}program/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
+    wget -O nginxproxymanager.sh ${repo_url}program/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
 }
 
 #portainer
 function portainer(){
-wget -O portainer.sh ${repo_url}program/portainer.sh && chmod +x portainer.sh && ./portainer.sh
+    wget -O portainer.sh ${repo_url}program/portainer.sh && chmod +x portainer.sh && ./portainer.sh
 }
 
 #speedtest-x
 function speedtest-x(){
-wget -O speedtest-x.sh ${repo_url}program/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
+    wget -O speedtest-x.sh ${repo_url}program/speedtest-x.sh && chmod +x speedtest-x.sh && ./speedtest-x.sh
 }
 
 #青龙面板
 function qinglong(){
-wget -O qinglong.sh ${repo_url}program/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
+    wget -O qinglong.sh ${repo_url}program/qinglong.sh && chmod +x qinglong.sh && ./qinglong.sh
 }
 
 #uptime-kuma
 function uptime-kuma(){
-wget -O uptime-kuma.sh ${repo_url}program/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
+    wget -O uptime-kuma.sh ${repo_url}program/uptime-kuma.sh && chmod +x uptime-kuma.sh && ./uptime-kuma.sh
 }
 
 #ADGuard-Home去广告DNS
 function adguardhome(){
-wget -O adguard-home.sh ${repo_url}program/adguard-home.sh && chmod +x adguard-home.sh && ./adguard-home.sh
+    wget -O adguard-home.sh ${repo_url}program/adguard-home.sh && chmod +x adguard-home.sh && ./adguard-home.sh
 }
 
 #探针
 function serverstatus(){
-wget -O serverstatus.sh ${repo_url}program/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
+    wget -O serverstatus.sh ${repo_url}program/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
 }
 
 #NAS面板
 function sun-panel(){
-wget -O sun-panel.sh ${repo_url}program/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
+    wget -O sun-panel.sh ${repo_url}program/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
 }
 
 #Docker Clash
 function cat(){
-wget -O cat.sh ${repo_url}program/cat.sh && chmod +x cat.sh && ./cat.sh    
+    wget -O cat.sh ${repo_url}program/cat.sh && chmod +x cat.sh && ./cat.sh    
 }
 
 #雷池
 function safeline(){
-bash -c "$(curl -fsSLk https://waf-ce.chaitin.cn/release/latest/setup.sh)"    
+    bash -c "$(curl -fsSLk https://waf-ce.chaitin.cn/release/latest/setup.sh)"    
 }
 
 #QB离线下载BT/PT
 function qbittorrent(){
-wget -O qbittorrent.sh ${repo_url}program/qbittorrent.sh && chmod +x qbittorrent.sh && ./qbittorrent.sh
+    wget -O qbittorrent.sh ${repo_url}program/qbittorrent.sh && chmod +x qbittorrent.sh && ./qbittorrent.sh
 }
+
+#Alist
+function alist(){
+    wget -O alist.sh ${repo_url}program/alist.sh && chmod +x alist.sh && ./alist.sh    
+}
+
+#ALLTube视频下载
+function alltube(){
+    wget -O alltube.sh ${repo_url}program/alltube.sh && chmod +x alltube.sh && ./alltube.sh    
+}
+
+#HastPaste在线剪贴板
+function hastypaste(){
+    wget -O hastypaste.sh ${repo_url}program/hastypaste.sh && chmod +x hastypaste.sh && ./hastypaste.sh
+}
+
+#IT-Tools在线IT工具箱
+function it-tools(){
+    wget -O it-tools.sh ${repo_url}program/it-tools.sh && chmod +x it-tools.sh && ./it-tools.sh    
+}
+
+#SearXNG搜索引擎
+function searxng(){
+    wget -O searxng.sh ${repo_url}program/searxng.sh && chmod +x searxng.sh && ./searxng.sh
+}
+
 
 #主菜单
 function start_menu(){
@@ -90,14 +116,21 @@ function start_menu(){
     green " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     green " =================================================="
-    green " 1. Nginx Proxy Manager 可视化Nginx管理面板" 
-    green " 2. Portainer 可视化Docker管理面板"
-    green " 3. Speedtest-X 测速面板"
+    green " 1. Nginx Proxy Manager 可视化Nginx管理面板"        
+    green " 2. Portainer 可视化Docker管理面板"                  
+    green " 3. Speedtest-X 测速面板" 
     green " 4. 青龙面板" 
     green " 5. Uptime-Kuma"
     green " 6. ADGuard Home 去广告,DNS面板"
     green " 7. ServerStatus探针"
     green " 8. Sun Panel NAS面板"
+    green " 9. 雷池WAF"
+    green " 10.QBittorrent BT/PT下载"
+    green " 11.Alist"
+    green " 12.ALLTube视频下载"
+    green " 13.HastPaste在线剪贴板"
+    green " 14.IT-Tools在线IT工具箱"
+    green " 15.SearXNG搜索引擎"
     green " =================================================="
     green " 99. Docker Clash"
     green " =================================================="
@@ -128,6 +161,27 @@ function start_menu(){
 	    ;;
         8 )
            sun-panel
+        ;;
+        9 )
+           safeline 
+        ;;
+        10)
+           qbittorrent
+        ;;
+        11)
+           alist
+        ;;
+        12)
+           alltube
+        ;;
+        13)
+           hastypaste
+        ;;
+        14)
+           it-tools
+        ;;
+        15)
+           searxng
         ;;
         99)
            cat
