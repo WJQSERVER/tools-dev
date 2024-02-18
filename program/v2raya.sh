@@ -8,12 +8,8 @@ if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; the
     exit 1
 fi
 
-# 创建目录
-mkdir -p /root/data/docker_data/*
-cd /root/data/docker_data/*
-
-# 从用户输入中获取容器端口
-read -p "请输入容器端口: " PORT
+mkdir -p /root/data/docker_data/v2raya
+cd /root/data/docker_data/v2raya
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
@@ -31,12 +27,9 @@ services:
             - V2RAYA_V2RAY_BIN=/usr/local/bin/v2ray
             - V2RAYA_LOG_FILE=/tmp/v2raya.log
         container_name: v2raya
-        networks:
-            host: {}
+        network_mode: host
         privileged: true
         restart: always
-networks:
-    host: {}
 
 EOF
 
@@ -55,13 +48,13 @@ cd /root
 source "repo_url.conf"
 
 #等待1s
-sleep 1
+sleep 3
 
 #返回菜单/退出脚本
 read -p "是否返回菜单?: [Y/n]" choice
 
 if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    echo "back2memu_changeme"
+    wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
 else
     echo "脚本结束"
 fi
