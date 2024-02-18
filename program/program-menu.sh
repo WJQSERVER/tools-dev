@@ -112,6 +112,11 @@ function koishi(){
     wget -O koishi.sh ${repo_url}program/koishi.sh && chmod +x koishi.sh && ./koishi.sh
 }
 
+#V2rayA
+function v2raya(){
+    wget -O v2raya.sh ${repo_url}program/v2raya.sh && chmod +x v2raya.sh && ./v2raya.sh
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -141,6 +146,7 @@ function start_menu(){
     green " 14.IT-Tools在线IT工具箱"
     green " 15.SearXNG搜索引擎"
     yellow " =================================================="
+    green " 90. V2rayA Docker"
     green " 99. Docker Clash"
     yellow " =================================================="
     green " 0. 返回主脚本"
@@ -192,6 +198,9 @@ function start_menu(){
         15)
            searxng
         ;;
+        90)
+           v2raya
+        ;;   
         99)
            cat
         ;;   
