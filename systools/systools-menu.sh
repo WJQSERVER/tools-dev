@@ -8,7 +8,7 @@ clear
 echo "免责声明：请阅读并同意以下条款才能继续使用本脚本。"
 echo "本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo "使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
-echo "当前版本为V.0.4-BETA"
+echo "当前版本为V.0.5-BETA"
 sleep 1
 
 # 导入配置文件
@@ -113,32 +113,32 @@ function back(){
 #主菜单
 function start_menu(){
     clear
-    red " WJQserver Studio tools BETA" 
-    green " WJQserver Studio的快捷工具箱 BETA版 "
-    green " FROM: https://github.com/WJQSERVER/tools-dev "
+    yellow " WJQserver Studio的快捷工具箱 BETA版 "
+    green " WJQserver Studio tools BETA" 
+    yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    green " =================================================="
+    yellow " =================================================="
     green " 1. 修改主机名" 
     green " 2. 修改时区"
-    green " =================================================="
+    yellow " =================================================="
     green " 3. IPv4/6优先级切换"
     green " 4. 网络侧信息查看" 
     green " 5. 修改DNS"
     green " 6. BBR管理面板"
     green " 7. 端口占用检测"
     green " 8. UFW防火墙"
-    green " =================================================="
+    yellow " =================================================="
     green " 9. SWAP虚拟内存设置"
-    green " =================================================="
+    yellow " =================================================="
     green " 10.用户管理"
     green " 11.修改root密码"
     green " 12.创建普通用户"
     green " 13.生成强密码"
-    green " =================================================="
+    yellow " =================================================="
     green " 14.新建SSH连接"
-    green " =================================================="
+    yellow " =================================================="
     green " 99.重启"
-    green " =================================================="
+    yellow " =================================================="
     green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput

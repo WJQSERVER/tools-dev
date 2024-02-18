@@ -74,9 +74,9 @@ function back(){
 #主菜单
 function start_menu(){
     clear
-    red " WJQserver Studio tools DEV" 
-    green " 由WJQserver Studio提供的快捷工具箱 DEV版 "
-    green " FROM: https://github.com/WJQSERVER/tools-dev "
+    yellow " WJQserver Studio的快捷工具箱 BETA版 "
+    green " WJQserver Studio tools BETA" 
+    yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     red " 本脚本仅用于链接到其他作者的脚本，不做任何保证 "
     yellow " =================================================="
@@ -87,7 +87,7 @@ function start_menu(){
     green " 5. XX"
     green " 6. XX"
     green " 7. XX"
-    green " =================================================="
+    yellow " =================================================="
     green " 0. 返回主界面"
     echo
     read -p "请输入数字:" menuNumberInput
