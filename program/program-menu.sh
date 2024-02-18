@@ -112,6 +112,11 @@ function koishi(){
     wget -O koishi.sh ${repo_url}program/koishi.sh && chmod +x koishi.sh && ./koishi.sh
 }
 
+#返回主脚本
+function back(){
+    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -138,7 +143,7 @@ function start_menu(){
     green " =================================================="
     green " 99. Docker Clash"
     green " =================================================="
-    green " 0. 退出脚本"
+    green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
@@ -192,7 +197,7 @@ function start_menu(){
         ;;   
 
         0 )
-            exit 1
+            back
         ;;
 	
         * )

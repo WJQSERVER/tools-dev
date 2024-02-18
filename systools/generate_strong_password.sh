@@ -70,3 +70,25 @@ fi
 password=$(generate_password "$password_length" "$use_lowercase" "$use_uppercase" "$use_special_chars")
 
 echo "生成的随机密码: $password"
+
+#等待5s
+sleep 5
+echo "5秒后返回菜单"
+
+#回到root目录
+cd /root
+
+# 导入配置文件
+source "repo_url.conf"
+
+#等待1s
+sleep 1
+
+#返回菜单/退出脚本
+read -p "是否返回菜单?: [Y/n]" choice
+
+if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+    wget -O systools-menu.sh ${repo_url}systools/systools-menu.sh && chmod +x systools-menu.sh && ./systools-menu.sh
+else
+    echo "脚本结束"
+fi

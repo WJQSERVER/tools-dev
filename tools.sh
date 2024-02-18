@@ -8,7 +8,7 @@ echo "本脚本仅供学习和参考使用，作者不对其完整性、准确�
 echo "使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
 echo "当前版本为V.0.4-BETA,BETA版仅供测试使用。"
 
-sleep 3
+sleep 1
 
 #BETA版
 repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"

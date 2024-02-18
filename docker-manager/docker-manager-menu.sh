@@ -67,9 +67,9 @@ function docker-remove(){
 wget -O docker-remove.sh ${repo_url}docker-manager/docker-remove.sh && chmod +x docker-remove.sh && ./docker-remove.sh
 }
 
-#返回主界面(跳过条款)
-function back-a(){
-wget -O tools-a.sh ${repo_url}tools-a.sh && chmod +x tools-a.sh && ./tools-a.sh
+#返回主脚本
+function back(){
+    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
 }
 
 #主菜单
@@ -122,7 +122,7 @@ function start_menu(){
            docker-remove
         ;;
         0 )
-            back-a
+            back
         ;;
 	
         * )

@@ -32,101 +32,203 @@ blue(){
 
 #ChatGPT解锁
 function chatgpt(){
-clear
-bash <(curl -Ls https://cdn.jsdelivr.net/gh/missuo/OpenAI-Checker/openai.sh)
+    clear
+    bash <(curl -Ls https://cdn.jsdelivr.net/gh/missuo/OpenAI-Checker/openai.sh)
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #Region流媒体解锁测试
 function region-media(){
-clear
-bash <(curl -L -s check.unlock.media)
+    clear
+    bash <(curl -L -s check.unlock.media)
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #yeahwu流媒体解锁检测
 function yeahwu-media(){
-clear
-wget -qO- https://github.com/yeahwu/check/raw/main/check.sh | bash
+    clear
+    wget -qO- https://github.com/yeahwu/check/raw/main/check.sh | bash
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #backtrace三网回程线路测试
 function backtrace(){
-clear    
-curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
+    clear    
+    curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #mtr_trace三网回程线路测试
 function mtrtrace(){
-clear
-curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh | bash
+    clear
+    curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh | bash
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #besttrace三网回程延迟路由测试
 function besttrace(){
-clear
-wget -qO- git.io/besttrace | bash
+    clear
+    wget -qO- git.io/besttrace | bash   
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #Superspeed三网测速
 function superspeed(){
-clear    
-bash <(curl -Lso- https://git.io/superspeed_uxh)
+    clear    
+    bash <(curl -Lso- https://git.io/superspeed_uxh)   
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #Hyperspeed三网测速
 function hyperspeed(){
-clear
-bash <(curl -Lso- https://bench.im/hyperspeed)
+    clear
+    bash <(curl -Lso- https://bench.im/hyperspeed)    
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #Lemonbench 综合测试
 function lemonbench(){
-clear    
-curl -fsL https://ilemonra.in/LemonBenchIntl | bash -s fast
+    clear    
+    curl -fsL https://ilemonra.in/LemonBenchIntl | bash -s fast    
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #Yabs性能带宽测试
 function yabsbench(){
-clear
-curl -sL yabs.sh | bash -s -- -i -5
+    clear
+    curl -sL yabs.sh | bash -s -- -i -5   
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #bench性能测试
 function benchbench(){
-clear
-curl -Lso- bench.sh | bash
+    clear
+    curl -Lso- bench.sh | bash
+    #等待1s
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
 }
 
 #spiritysdx融合怪测评
 function spiritysdx(){
-clear
-curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh
+    clear
+    curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh
+    sleep 1
+    #返回菜单/退出脚本
+    read -p "是否返回菜单?: [Y/n]" choice
+    if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+        wget -O test-menu.sh ${repo_url}Test/test-menu.sh && chmod +x test-menu.sh && ./test-menu.sh
+    else
+        echo "脚本结束"
+    fi
+}
+
+#返回主脚本
+function back(){
+    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
 }
 
 #主菜单
 function start_menu(){
     clear
-    red " WJQserver Studio tools BETA" 
-    green " WJQserver Studio的快捷工具箱 BETA版 "
-    green " FROM: https://github.com/WJQSERVER/tools-dev "
+    yellow " WJQserver Studio的快捷工具箱 BETA版 "
+    green " WJQserver Studio tools BETA" 
+    yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    green " =================================================="
+    yellow " =================================================="
     green " 1. ChatGPT解锁" 
     green " 2. Region流媒体解锁测试"
     green " 3. Yeahwu流媒体解锁检测"
-    green " =================================================="    
+    yellow " =================================================="    
     green " 4. Backtrace三网回程线路测试" 
     green " 5. MTR_trace三网回程线路测试"
     green " 6. Besttrace三网回程延迟路由测试"
-    green " =================================================="
+    yellow " =================================================="
     green " 7. Superspeed三网测速"
     green " 8. Hyperspeed三网测速"
-    green " =================================================="
+    yellow " =================================================="
     green " 9. Lemonbench综合测试"
     green " 10.Yabs性能带宽测试"
     green " 11.bench性能测试"
     green " 12.spiritysdx融合怪测评"
-    green " =================================================="
-    green " 0. 退出脚本"
+    yellow " =================================================="
+    green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
@@ -168,7 +270,7 @@ function start_menu(){
 	    ;;                                           
 
         0 )
-            exit 1
+           back
         ;;
 	
         * )
