@@ -8,7 +8,7 @@ clear
 echo "免责声明：请阅读并同意以下条款才能继续使用本脚本。"
 echo "本脚本仅供学习和参考使用，作者不对其完整性、准确性或实用性做出任何保证。"
 echo "使用本脚本所造成的任何损失或损害，作者不承担任何责任。"
-echo "当前版本为V.0.4-dlc1 BETA"
+echo "当前版本为V.0.5 BETA"
 
 # 导入配置文件
 source "repo_url.conf"
@@ -120,11 +120,11 @@ function back(){
 #主菜单
 function start_menu(){
     clear
-    red " WJQserver Studio tools BETA" 
-    green " 由WJQserver Studio提供的快捷工具箱 BETA版 "
-    green " FROM: https://github.com/WJQSERVER/tools-dev "
+    yellow " WJQserver Studio的快捷工具箱 BETA版 "
+    green " WJQserver Studio tools BETA" 
+    yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
-    green " =================================================="
+    yellow " =================================================="
     green " 1. Nginx Proxy Manager 可视化Nginx管理面板"        
     green " 2. Portainer 可视化Docker管理面板"                  
     green " 3. Speedtest-X 测速面板" 
@@ -140,9 +140,9 @@ function start_menu(){
     green " 13.HastPaste在线剪贴板"
     green " 14.IT-Tools在线IT工具箱"
     green " 15.SearXNG搜索引擎"
-    green " =================================================="
+    yellow " =================================================="
     green " 99. Docker Clash"
-    green " =================================================="
+    yellow " =================================================="
     green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
