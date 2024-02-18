@@ -105,6 +105,11 @@ sleep 3
 reboot    
 }
 
+#返回主脚本
+function back(){
+    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -134,31 +139,31 @@ function start_menu(){
     green " =================================================="
     green " 99.重启"
     green " =================================================="
-    green " 0. 退出脚本"
+    green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           hostname
-	    ;;
+         hostname
+	     ;;
         2 )
-	       timezone
+	        timezone
         ;;
-	    3 )
-           ipv-switch
-	    ;;
+	     3 )
+          ipv-switch
+	     ;;
         4 )
 	       networkinfo
         ;;
-	    5 )
+	     5 )
            change_dns
-	    ;;
+	     ;;
         6 )
 	       bbr-manager
         ;;
-	    7 )
+	     7 )
            check_port_usage
-	    ;;
+	     ;;
         8 )
            ufw
         ;;
@@ -184,8 +189,8 @@ function start_menu(){
            reboot
         ;;         
 
-        0 )
-            exit 1
+        0)
+          back
         ;;
 	
         * )

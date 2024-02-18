@@ -74,7 +74,10 @@ manage_container() {
             status_container $container_name
             ;;
         0)
-            echo "返回上级菜单."
+            echo "返回上级菜单"
+            sleep 1
+            source "repo_url.conf"
+            wget -O docker-manager-menu.sh ${repo_url}docker-manager/docker-manager-menu.sh && chmod +x docker-manager-menu.sh && ./docker-manager-menu.sh
             ;;
         *)
             echo "无效的选项: $choice"

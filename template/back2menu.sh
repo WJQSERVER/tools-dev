@@ -1,4 +1,3 @@
-
 #回到root目录
 cd /root
 
@@ -6,13 +5,13 @@ cd /root
 source "repo_url.conf"
 
 #等待1s
-sleep 3
+sleep 1
 
 #返回菜单/退出脚本
 read -p "是否返回菜单?: [Y/n]" choice
 
 if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
+    echo "back2memu_changeme"
 else
     echo "脚本结束"
 fi

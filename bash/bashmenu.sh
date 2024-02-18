@@ -66,6 +66,11 @@ function pve-info(){
 wget -O pve-info.sh ${repo_url}bash/pve-info.sh && chmod +x pve-info.sh && ./pve-info.sh
 }
 
+#返回主脚本
+function back(){
+    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -83,7 +88,7 @@ function start_menu(){
     green " 6. XX"
     green " 7. XX"
     green " =================================================="
-    green " 0. 退出脚本"
+    green " 0. 返回主界面"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
@@ -110,7 +115,7 @@ function start_menu(){
 	    ;;   
 
         0 )
-           exit 1
+           back
         ;;
 	
         * )

@@ -108,5 +108,20 @@ echo "所在城市: $city"
 echo "系统时间: $system_time"
 echo "---------------------------"
 
-# 结束脚本
-exit 0
+#回到root目录
+cd /root
+
+# 导入配置文件
+source "repo_url.conf"
+
+#等待1s
+sleep 3
+
+#返回菜单/退出脚本
+read -p "是否返回菜单?: [Y/n]" choice
+
+if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
+else
+    echo "脚本结束"
+fi

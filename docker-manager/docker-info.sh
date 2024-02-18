@@ -77,3 +77,21 @@ echo ""
 echo "安全信息:"
 echo "  实时安全扫描: $security_scan"
 echo "  实时漏洞扫描: $vulnerability_scan"
+
+#回到root目录
+cd /root
+
+# 导入配置文件
+source "repo_url.conf"
+
+#等待1s
+sleep 1
+
+#返回菜单/退出脚本
+read -p "是否返回菜单?: [Y/n]" choice
+
+if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
+    wget -O docker-manager-menu.sh ${repo_url}docker-manager/docker-manager-menu.sh && chmod +x docker-manager-menu.sh && ./docker-manager-menu.sh
+else
+    echo "脚本结束"
+fi

@@ -74,6 +74,11 @@ function 3x-ui(){
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) v2.1.2
 }
 
+#返回主脚本
+function back(){
+    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -92,7 +97,7 @@ function start_menu(){
     green " 6. X-UI_勇哥版(此版本有争议)(闭源且加密)"
     green " 7. 3X-UI_伊朗魔改版x-ui"
     green " =================================================="
-    green " 0. 退出脚本"
+    green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
@@ -119,7 +124,7 @@ function start_menu(){
 	    ;;   
 
         0 )
-            exit 1
+           back
         ;;
 	
         * )
