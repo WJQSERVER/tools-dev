@@ -24,7 +24,7 @@ services:
         environment:
             - IPTABLES_MODE=legacy
             - V2RAYA_NFTABLES_SUPPORT=off
-            - V2RAYA_V2RAY_BIN=/usr/local/bin/v2ray
+            - V2RAYA_V2RAY_BIN=/usr/local/bin/xray
             - V2RAYA_LOG_FILE=/tmp/v2raya.log
         container_name: v2raya
         network_mode: host
