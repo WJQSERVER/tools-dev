@@ -11,6 +11,46 @@ fi
 mkdir -p /root/data/docker_data/v2raya
 cd /root/data/docker_data/v2raya
 
+# 
+xray() {
+    tag=xray
+    echo "使用xray内核"
+}
+
+#
+v2ray() {
+    tag=v2ray
+    echo "使用v2ray内核"
+}
+
+{
+    # 显示菜单
+    echo "请选择内核版本:"
+    echo "1. Xray"
+    echo "2. V2ray"
+
+    # 读取用户输入
+    echo -n "请输入选项对应的编号: "
+    read choice
+
+    # 根据用户输入执行相应的操作
+    case $choice in
+        1)
+            xray
+            ;;
+        2)
+            v2ray
+            ;;
+        0)
+            exit
+            ;;
+        *)
+            echo "默认使用Xray内核"
+            tag=xray
+            ;;
+    esac
+}
+
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
 version: '3.9'
@@ -24,7 +64,7 @@ services:
         environment:
             - IPTABLES_MODE=legacy
             - V2RAYA_NFTABLES_SUPPORT=off
-            - V2RAYA_V2RAY_BIN=/usr/local/bin/xray
+            - V2RAYA_V2RAY_BIN=/usr/local/bin/$tag
             - V2RAYA_LOG_FILE=/tmp/v2raya.log
         container_name: v2raya
         network_mode: host
