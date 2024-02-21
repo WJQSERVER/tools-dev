@@ -117,6 +117,11 @@ function v2raya(){
     wget -O v2raya.sh ${repo_url}program/v2raya.sh && chmod +x v2raya.sh && ./v2raya.sh
 }
 
+#WebSSH
+function webssh(){
+    wget -O webssh.sh ${repo_url}program/webssh.sh && chmod +x webssh.sh && ./webssh.sh
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -145,6 +150,7 @@ function start_menu(){
     green " 13.HastPaste在线剪贴板"
     green " 14.IT-Tools在线IT工具箱"
     green " 15.SearXNG搜索引擎"
+    green " 16.WebSSH网页SSH"
     yellow " =================================================="
     green " 90. V2rayA Docker"
     green " 99. Docker Clash"
@@ -198,6 +204,9 @@ function start_menu(){
         15)
            searxng
         ;;
+        16)
+           webssh
+        ;;   
         90)
            v2raya
         ;;   
