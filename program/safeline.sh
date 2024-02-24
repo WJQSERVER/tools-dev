@@ -1,3 +1,11 @@
+# 检查是否已经安装 Docker 和 Docker Compose
+if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; then
+    echo "请先安装 Docker 和 Docker Compose。"
+    exit 1
+fi
+
+#官方安装脚本
+bash -c "$(curl -fsSLk https://waf-ce.chaitin.cn/release/latest/setup.sh)"
 
 #回到root目录
 cd /root
