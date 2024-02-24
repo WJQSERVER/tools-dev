@@ -122,6 +122,11 @@ function webssh(){
     wget -O webssh.sh ${repo_url}program/webssh.sh && chmod +x webssh.sh && ./webssh.sh
 }
 
+#中微子代理
+function neutrino_proxy(){
+    wget -O neutrino-proxy.sh ${repo_url}program/neutrino-proxy.sh && chmod +x neutrino-proxy.sh && ./neutrino-proxy.sh
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -151,6 +156,7 @@ function start_menu(){
     green " 14.IT-Tools在线IT工具箱"
     green " 15.SearXNG搜索引擎"
     green " 16.WebSSH网页SSH"
+    green " 17.中微子代理"
     yellow " =================================================="
     green " 90. V2rayA Docker"
     green " 99. Docker Clash"
@@ -206,6 +212,9 @@ function start_menu(){
         ;;
         16)
            webssh
+        ;;
+        17)
+           neutrino_proxy
         ;;   
         90)
            v2raya
