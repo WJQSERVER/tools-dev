@@ -127,6 +127,11 @@ function neutrino_proxy(){
     wget -O neutrino-proxy.sh ${repo_url}program/neutrino-proxy.sh && chmod +x neutrino-proxy.sh && ./neutrino-proxy.sh
 }
 
+#中微子代理客户端
+function neutrino_client(){
+    wget -O neutrino-proxy-client.sh ${repo_url}program/neutrino-proxy-client.sh && chmod +x neutrino-proxy-client.sh && ./neutrino-proxy-client.sh
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -157,6 +162,7 @@ function start_menu(){
     green " 15.SearXNG搜索引擎"
     green " 16.WebSSH网页SSH"
     green " 17.中微子代理"
+    green " 18.中微子代理客户端" 
     yellow " =================================================="
     green " 90. V2rayA Docker"
     green " 99. Docker Clash"
@@ -215,7 +221,10 @@ function start_menu(){
         ;;
         17)
            neutrino_proxy
-        ;;   
+        ;;
+        18)
+           neutrino_client
+        ;;      
         90)
            v2raya
         ;;   
