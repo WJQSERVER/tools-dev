@@ -125,6 +125,8 @@ systemctl status neutrino-proxy.service
 
 # 提示服务访问地址
 echo "服务已成功启动！"
+echo "面板默认账户:admin"
+echo "面板默认密码:123456"
 echo "请访问以下地址来访问您的服务："
 echo "http://<服务器IP>:$webui"
 
