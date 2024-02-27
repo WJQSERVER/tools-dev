@@ -38,8 +38,8 @@ read -p "此操作将安装 wget, curl, vim 等常用软件包并进行更新。
 if [[ $choice == "y" ]]; then
   # 安装软件包
   apt update
-  apt upgrade -y
   apt install wget curl vim git sudo -y
+  apt upgrade -y
 fi
 
 #彩色
