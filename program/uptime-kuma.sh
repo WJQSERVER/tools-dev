@@ -23,7 +23,7 @@ services:
     ports:
       - $container_port:3000
     volumes:
-      - $data_dir:/var/lib/uptime-kuma
+      - ./data:/app/data
     restart: always
 EOF
 
