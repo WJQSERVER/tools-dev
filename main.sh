@@ -9,6 +9,8 @@
 #"当前版本为V.0.5-BETA,BETA版仅供测试使用。"
 
 # 导入配置文件
+#GLOBAL https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/
+#CN https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/
 source "repo_url.conf"
 
 #彩色
