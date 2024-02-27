@@ -19,7 +19,7 @@ cat > "$data_dir/docker-compose.yml" <<EOF
 version: '3.8'
 services:
   uptime-kuma:
-    image: uptimekuma/uptime-kuma:latest
+    image: uptimekuma/uptime-kuma
     ports:
       - $container_port:3000
     volumes:
