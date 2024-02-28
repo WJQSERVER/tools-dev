@@ -15,8 +15,21 @@ cd /root/data/docker_data/koishi
 # 从用户输入中获取容器端口
 read -p "请输入容器端口: " PORT
 
-# 使用Docker-Cli
-docker run -p $PORT:5140 koishijs/koishi -v /root/data/docker_data/koishi:/koishi
+# 创建 docker-compose.yml 文件
+cat > docker-compose.yml <<EOF
+version: '3.9'
+services:
+    koishi:
+        image: koishijs/koishi
+        volumes:
+            - '/root/data/docker_data/koishi:/koishi'
+        ports:
+            - '$PORT:5140'
+
+EOF
+
+# 启动容器
+docker-compose up -d
 
 # 提示服务访问地址
 echo "服务已成功启动！"

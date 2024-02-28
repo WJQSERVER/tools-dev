@@ -16,8 +16,24 @@ fi
 # 输出使用的端口
 echo "正在使用端口: $PORT"
 
-# 运行Speedtest-X容器
-docker run -d -e MAX_LOG_COUNT=200 -e SAME_IP_MULTI_LOGS=true -e IP_SERVICE=ipinfo.io -e WEBPORT=$PORT --network host -it badapple9/speedtest-x
+# 创建 docker-compose.yml 文件
+cat > docker-compose.yml <<EOF
+version: '3.9'
+services:
+    speedtest-x:
+        image: badapple9/speedtest-x
+        tty: true
+        stdin_open: true
+        network_mode: host
+        environment:
+            - WEBPORT=$PORT
+            - IP_SERVICE=ipinfo.io
+            - SAME_IP_MULTI_LOGS=true
+            - MAX_LOG_COUNT=200
+EOF
+
+# 启动容器
+docker-compose up -d
 
 # 等待容器启动
 sleep 5
