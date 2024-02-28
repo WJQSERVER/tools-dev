@@ -16,8 +16,23 @@ fi
 # 输出使用的端口
 echo "正在使用端口: $PORT"
 
-# 运行Speedtest-X容器
-docker run -d -p $PORT:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /dockerData/portainer:/data --restart=always --name portainer 6053537/portainer-ce:latest
+# 创建 docker-compose.yml 文件
+cat > docker-compose.yml <<EOF
+version: '3.9'
+services:
+    portainer-ce:
+        image: '6053537/portainer-ce:latest'
+        container_name: portainer
+        restart: always
+        volumes:
+            - '/dockerData/portainer:/data'
+            - '/var/run/docker.sock:/var/run/docker.sock'
+        ports:
+            - '$PORT:9000'
+EOF
+
+# 启动容器
+docker-compose up -d
 
 # 等待容器启动
 sleep 5

@@ -9,8 +9,8 @@ if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; the
 fi
 
 # 创建目录
-mkdir -p /root/data/docker_data/memos
-cd /root/data/docker_data/memos
+mkdir -p /root/data/docker_data/qinglong-jdpro
+cd /root/data/docker_data/qinglong-jdpro
 
 # 从用户输入中获取容器端口
 read -p "请输入容器端口: " PORT
@@ -19,13 +19,21 @@ read -p "请输入容器端口: " PORT
 cat > docker-compose.yml <<EOF
 version: '3.9'
 services:
-    memos:
-        image: 'neosmemo/memos:stable'
+    pro:
+        image: 'nolanhzy/pro:latest'
+        restart: always
+        environment:
+            - ServerProxy=#反代地址
+            - Pwd=#密码
+            - User=#用户
+            - Prolic=#密钥
         volumes:
-            - './:/var/opt/memos'
+            - './data:/app/Data'
         ports:
-            - '$PORT:5230'
-        container_name: memos
+            - '$PORT:5016'
+        container_name: pro
+        stdin_open: true
+
 EOF
 
 # 启动容器
@@ -34,7 +42,7 @@ docker-compose up -d
 # 提示服务访问地址
 echo "服务已成功启动！"
 echo "请访问以下地址来访问您的服务："
-echo "http:/<服务器IP>:$PORT"
+echo "http://<服务器IP>:$PORT"
 
 #回到root目录
 cd /root
@@ -43,13 +51,13 @@ cd /root
 source "repo_url.conf"
 
 #等待1s
-sleep 3
+sleep 1
 
 #返回菜单/退出脚本
 read -p "是否返回菜单?: [Y/n]" choice
 
 if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
+    echo "back2memu_changeme"
 else
     echo "脚本结束"
 fi
