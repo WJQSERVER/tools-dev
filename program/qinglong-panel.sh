@@ -28,44 +28,29 @@ blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
 
-#
-function (){
+#青龙tools
+function qltools(){
 
 }
 
-#
-function (){
+#京东Pro
+function jdpro(){
 
 }
 
-#
-function (){
+#京东rabbit
+function jdrabbit(){
 
 }
 
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
+#饿了么面板
+function elmmb(){
 
 }
 
 #返回主脚本
 function back(){
-    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
+    wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
 }
 
 #主菜单
@@ -80,36 +65,23 @@ function start_menu(){
     green " 2. "
     green " 3. "
     green " 4. " 
-    green " 5. "
-    green " 6. "
-    green " 7. "
     yellow " =================================================="
     green " 0. 退出脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           #
+           qltools
 	    ;;
         2 )
-	       #
+	       jdpro
         ;;
 	    3 )
-           #
+           jdrabbit
 	    ;;
         4 )
-	       #
+	       elmmb
         ;;
-	    5 )
-           #
-	    ;;
-        6 )
-	       #
-        ;;
-	    7 )
-           #
-	    ;;   
-
         0 )
            back
         ;;

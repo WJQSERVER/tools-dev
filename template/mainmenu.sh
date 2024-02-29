@@ -84,7 +84,7 @@ function start_menu(){
     green " 6. "
     green " 7. "
     yellow " =================================================="
-    green " 0. 退出脚本"
+    green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
