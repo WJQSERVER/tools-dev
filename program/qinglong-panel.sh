@@ -30,22 +30,22 @@ blue(){
 
 #青龙tools
 function qltools(){
-
+    wget -O qinglong-panel-tools.sh ${repo_url}program/qinglong-panel/qinglong-panel-tools.sh && chmod +x qinglong-panel-tools.sh && ./qinglong-panel-tools.sh
 }
 
 #京东Pro
 function jdpro(){
-
+    wget -O qinglong-panel-jdpro.sh ${repo_url}program/qinglong-panel/qinglong-panel-jdpro.sh && chmod +x qinglong-panel-jdpro.sh && ./qinglong-panel-jdpro.sh
 }
 
 #京东rabbit
 function jdrabbit(){
-
+    wget -O qinglong-panel-jdrabbit.sh ${repo_url}program/qinglong-panel/qinglong-panel-jdrabbit.sh && chmod +x qinglong-panel-jdrabbit.sh && ./qinglong-panel-jdrabbit.sh
 }
 
 #饿了么面板
 function elmmb(){
-
+    wget -O qinglong-panel-elmmb.sh ${repo_url}program/qinglong-panel/qinglong-panel-elmmb.sh && chmod +x qinglong-panel-elmmb.sh && ./qinglong-panel-elmmb.sh
 }
 
 #返回主脚本
@@ -61,10 +61,10 @@ function start_menu(){
     yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
-    green " 1. " 
-    green " 2. "
-    green " 3. "
-    green " 4. " 
+    green " 1. 青龙tools" 
+    green " 2. 京东Pro"
+    green " 3. 京东rabbit"
+    green " 4. 饿了么面板" 
     yellow " =================================================="
     green " 0. 退出脚本"
     echo
