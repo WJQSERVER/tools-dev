@@ -11,14 +11,8 @@ echo "当前版本为V.0.5-BETA,BETA版仅供测试使用。"
 sleep 1
 
 #BETA版
-repo_url="https://tools.wjqserver.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"
-
-# 检查配置文件是否存在
-conf_file="repo_url.conf"
-if [ ! -f "$conf_file" ]; then
-    # 创建配置文件并写入变量
-    echo "repo_url=$repo_url" > "$conf_file"
-fi
+repo_url="https://gh.1888866.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"
+echo "repo_url=$repo_url" > "$conf_file"
 
 # 导入配置文件
 source "repo_url.conf"
