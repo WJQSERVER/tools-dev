@@ -28,24 +28,14 @@ blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
 
-#青龙tools
-function qltools(){
-    wget -O qinglong-panel-tools.sh ${repo_url}program/qinglong-panel/qinglong-panel-tools.sh && chmod +x qinglong-panel-tools.sh && ./qinglong-panel-tools.sh
+#服务端
+function server(){
+
 }
 
-#京东Pro
-function jdpro(){
-    wget -O qinglong-panel-jdpro.sh ${repo_url}program/qinglong-panel/qinglong-panel-jdpro.sh && chmod +x qinglong-panel-jdpro.sh && ./qinglong-panel-jdpro.sh
-}
+#客户端
+function client(){
 
-#京东rabbit
-function jdrabbit(){
-    wget -O qinglong-panel-jdrabbit.sh ${repo_url}program/qinglong-panel/qinglong-panel-jdrabbit.sh && chmod +x qinglong-panel-jdrabbit.sh && ./qinglong-panel-jdrabbit.sh
-}
-
-#饿了么面板
-function elmmb(){
-    wget -O qinglong-panel-elmmb.sh ${repo_url}program/qinglong-panel/qinglong-panel-elmmb.sh && chmod +x qinglong-panel-elmmb.sh && ./qinglong-panel-elmmb.sh
 }
 
 #返回主脚本
@@ -61,27 +51,20 @@ function start_menu(){
     yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
-    green " 1. 青龙tools" 
-    green " 2. 京东Pro"
-    green " 3. 京东rabbit"
-    green " 4. 饿了么面板" 
+    green " 1. " 
+    green " 2. "
     yellow " =================================================="
-    green " 0. 退出脚本"
+    green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           qltools
+           server
 	    ;;
         2 )
-	       jdpro
-        ;;
-	    3 )
-           jdrabbit
-	    ;;
-        4 )
-	       elmmb
-        ;;
+	       client
+        ;;   
+
         0 )
            back
         ;;

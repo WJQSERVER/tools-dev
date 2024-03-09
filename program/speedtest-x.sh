@@ -6,15 +6,12 @@ DEFAULT_PORT=9001
 #自定义端口
 read -p "请输入容器端口: " PORT
 
-# 检查是否指定了自定义端口，并将其设置为用户输入的值
-if [ $# -eq 1 ]; then
-    PORT=$1
-else
-    PORT=$DEFAULT_PORT
-fi
-
 # 输出使用的端口
 echo "正在使用端口: $PORT"
+
+# 创建目录
+mkdir -p /root/data/docker_data/speedtest-x
+cd /root/data/docker_data/speedtest-x
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
@@ -24,6 +21,7 @@ services:
         image: badapple9/speedtest-x
         tty: true
         stdin_open: true
+        restart: always
         network_mode: host
         environment:
             - WEBPORT=$PORT

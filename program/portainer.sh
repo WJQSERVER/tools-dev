@@ -16,6 +16,10 @@ fi
 # 输出使用的端口
 echo "正在使用端口: $PORT"
 
+# 创建目录
+mkdir -p /root/data/docker_data/portainer
+cd /root/data/docker_data/portainer
+
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
 version: '3.9'

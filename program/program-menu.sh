@@ -132,6 +132,16 @@ function neutrino_client(){
     wget -O neutrino-proxy-client.sh ${repo_url}program/neutrino-proxy-client.sh && chmod +x neutrino-proxy-client.sh && ./neutrino-proxy-client.sh
 }
 
+#青龙代挂面板
+function qinglong_panel(){
+    wget -O qinglong-panel.sh ${repo_url}program/qinglong-panel.sh && chmod +x qinglong-panel.sh && ./qinglong-panel.sh
+}
+
+#Caddy
+function caddy(){
+    
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -162,10 +172,8 @@ function start_menu(){
     green " 15.SearXNG搜索引擎"
     green " 16.WebSSH网页SSH"
     green " 17.中微子代理"
-    green " 18.中微子代理客户端" 
-    yellow " =================================================="
-    green " 90. V2rayA Docker"
-    green " 99. Docker Clash"
+    green " 18.青龙代挂面板" 
+    green " 19.Caddy"
     yellow " =================================================="
     green " 0. 返回主脚本"
     echo
@@ -223,8 +231,11 @@ function start_menu(){
            neutrino_proxy
         ;;
         18)
-           neutrino_client
-        ;;      
+           qinglong_panel
+        ;;
+        19)
+           caddy
+        ;;         
         90)
            v2raya
         ;;   
