@@ -15,6 +15,9 @@ cd /root/data/docker_data/qltools
 # 从用户输入中获取容器端口
 read -p "请输入容器端口: " PORT
 
+#拉取镜像
+docker pull nuanxinqing123/qltools:latest
+
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
 version: '3.9'

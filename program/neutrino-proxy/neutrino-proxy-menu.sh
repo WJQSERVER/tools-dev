@@ -30,12 +30,12 @@ blue(){
 
 #服务端
 function server(){
-
+    wget -O neutrino-proxy-server.sh ${repo_url}program/neutrino-proxy/neutrino-proxy-server.sh && chmod +x neutrino-proxy-server.sh && ./neutrino-proxy-server.sh
 }
 
 #客户端
 function client(){
-
+    wget -O neutrino-proxy-client.sh ${repo_url}program/neutrino-proxy/neutrino-proxy-client.sh && chmod +x neutrino-proxy-client.sh && ./neutrino-proxy-client.sh
 }
 
 #返回主脚本

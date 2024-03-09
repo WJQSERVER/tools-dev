@@ -12,6 +12,9 @@ fi
 mkdir -p /root/data/docker_data/elmmb
 cd /root/data/docker_data/elmmb
 
+#拉取镜像
+docker pull luobook/elmmb:latest
+
 # 从用户输入中获取容器端口
 read -p "请输入容器端口: " PORT
 

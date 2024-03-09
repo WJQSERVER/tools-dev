@@ -12,6 +12,9 @@ fi
 mkdir -p /root/data/docker_data/adguardhome
 cd /root/data/docker_data/adguardhome
 
+#拉取镜像
+docker pull adguard/adguardhome:latest
+
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
 version: "2"
