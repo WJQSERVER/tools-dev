@@ -92,6 +92,9 @@ systemctl status caddy.service
 
 # 提示服务访问地址
 echo "服务已成功启动！"
+echo "采用Caddyfile配置文件"
+echo "/root/data/caddy/Caddyfile"
+echo "已在<服务器IP>:80上部署了演示页"
 
 #回到root目录
 cd /root

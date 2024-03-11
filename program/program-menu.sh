@@ -124,22 +124,17 @@ function webssh(){
 
 #中微子代理
 function neutrino_proxy(){
-    wget -O neutrino-proxy.sh ${repo_url}program/neutrino-proxy.sh && chmod +x neutrino-proxy.sh && ./neutrino-proxy.sh
-}
-
-#中微子代理客户端
-function neutrino_client(){
-    wget -O neutrino-proxy-client.sh ${repo_url}program/neutrino-proxy-client.sh && chmod +x neutrino-proxy-client.sh && ./neutrino-proxy-client.sh
+    wget -O neutrino-proxy-menu.sh ${repo_url}program/neutrino-proxy/neutrino-proxy-menu.sh && chmod +x neutrino-proxy-menu.sh && ./neutrino-proxy-menu.sh
 }
 
 #青龙代挂面板
 function qinglong_panel(){
-    wget -O qinglong-panel.sh ${repo_url}program/qinglong-panel.sh && chmod +x qinglong-panel.sh && ./qinglong-panel.sh
+    wget -O qinglong-panel.sh ${repo_url}program/qinglong-panel/qinglong-panel.sh && chmod +x qinglong-panel.sh && ./qinglong-panel.sh
 }
 
 #Caddy
 function caddy(){
-    
+    wget -O caddy.sh ${repo_url}program/caddy.sh && chmod +x caddy.sh && ./caddy.sh
 }
 
 #返回主脚本
