@@ -12,7 +12,7 @@ sleep 1
 
 #BETA版
 repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"
-echo "repo_url=$repo_url" > "$conf_file"
+echo "repo_url=$repo_url" > "repo_url.conf"
 
 # 导入配置文件
 source "repo_url.conf"
