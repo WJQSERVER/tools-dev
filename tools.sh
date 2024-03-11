@@ -10,9 +10,12 @@ echo "当前版本为V.0.5-BETA,BETA版仅供测试使用。"
 
 sleep 1
 
+conf_file="repo_url.conf"
+
 #BETA版
 repo_url="https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"
-echo "repo_url=$repo_url" > "repo_url.conf"
+
+echo "repo_url=$repo_url" > "$conf_file"
 
 # 导入配置文件
 source "repo_url.conf"
