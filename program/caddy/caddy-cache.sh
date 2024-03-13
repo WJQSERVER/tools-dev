@@ -2,15 +2,47 @@
 
 clear
 
-# 检查是否已经安装 Docker 和 Docker Compose
-if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; then
-    echo "请先安装 Docker 和 Docker Compose。"
-    exit 1
-fi
-
+#提示
+echo "将会附带caddyserver/cache-handler和ueffel/caddy-brotli插件"
 # 创建目录
 mkdir -p /root/data/caddy
 cd /root/data/caddy
+
+#下载
+wget https://github.com/caddyserver/caddy/releases/latest/download/caddy_2.7.6_linux_amd64.tar.gz
+
+#解压
+tar -xzvf caddy_2.7.6_linux_amd64.tar.gz
+rm caddy_2.7.6_linux_amd64.tar.gz
+
+#赋权
+chmod +x /root/data/caddy/caddy
+chown root:root /root/data/caddy/caddy
+
+# 创建服务文件
+cat <<EOF > /etc/systemd/system/caddy.service
+[Unit]
+Description=Caddy
+Documentation=https://caddyserver.com/docs/
+After=network.target network-online.target
+Requires=network-online.target
+
+[Service]
+Type=notify
+User=root
+Group=root
+ExecStart=/root/data/caddy/caddy run --environ --config /root/data/caddy/Caddyfile
+ExecReload=/root/data/caddy/caddy reload --config /root/data/caddy/Caddyfile --force
+WorkingDirectory=/root/data/caddy
+TimeoutStopSec=5s
+LimitNOFILE=1048576
+PrivateTmp=true
+ProtectSystem=full
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
+EOF
 
 #创建hello world
 mkdir -p /root/data/caddy/page
@@ -39,38 +71,36 @@ cat <<EOF > /root/data/caddy/Caddyfile
 }
 
 :80 {
-	root * /root
+	root * /root/data/caddy/page
 	try_files {path}/index.html
      file_server
 }
 EOF
 
-# 从用户输入中获取容器端口
-read -p "请输入容器端口: " PORT
+#安装插件
+./caddy add-package github.com/caddyserver/cache-handler
+./caddy add-package github.com/ueffel/caddy-brotli
 
-#拉取镜像
-docker pull ghcr.io/sillygod/cdp-cache/caddy:latest
+#赋权
+chown root:root /root/data/caddy/Caddyfile
 
-# 创建 docker-compose.yml 文件
-cat > docker-compose.yml <<EOF
-version: '3.9'
-services:
-    caddy:
-        image: 'ghcr.io/sillygod/cdp-cache/caddy:latest'
-        volumes:
-            - '/root/data/caddy/Caddyfile:/app/Caddyfile'
-            - '/root/data/caddy/root:/root'
-        network_mode: host
-        container_name: caddy_cache
+# 重新加载systemd服务
+systemctl daemon-reload
 
-    
-EOF
+# 启用服务
+systemctl enable caddy.service
 
-# 启动容器
-docker-compose up -d
+# 启动服务
+systemctl start caddy.service
+
+# 检查服务状态
+systemctl status caddy.service
 
 # 提示服务访问地址
 echo "服务已成功启动！"
+echo "采用Caddyfile配置文件"
+echo "/root/data/caddy/Caddyfile"
+echo "已在<服务器IP>:80上部署了演示页"
 
 #回到root目录
 cd /root
@@ -85,7 +115,7 @@ sleep 1
 read -p "是否返回菜单?: [Y/n]" choice
 
 if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    echo "back2memu_changeme"
+    wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
 else
     echo "脚本结束"
 fi
