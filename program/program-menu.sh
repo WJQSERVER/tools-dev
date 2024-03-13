@@ -134,7 +134,7 @@ function qinglong_panel(){
 
 #Caddy
 function caddy(){
-    wget -O caddy.sh ${repo_url}program/caddy.sh && chmod +x caddy.sh && ./caddy.sh
+    wget -O caddy-menu.sh ${repo_url}program/caddy/caddy-menu.sh && chmod +x caddy-menu.sh && ./caddy-menu.sh
 }
 
 #返回主脚本

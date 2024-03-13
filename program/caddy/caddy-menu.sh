@@ -30,12 +30,12 @@ blue(){
 
 #only
 function caddy_only(){
-
+    wget -O caddy-only.sh ${repo_url}program/caddy/caddy-only.sh && chmod +x caddy-only.sh && ./caddy-only.sh
 }
 
 #cache
 function caddy_cache(){
-
+    wget -O caddy-cache.sh ${repo_url}program/caddy/caddy-cache.sh && chmod +x caddy-cache.sh && ./caddy-cache.sh
 }
 
 #返回主脚本
@@ -51,8 +51,8 @@ function start_menu(){
     yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
-    green " 1. Caddy原生部署" 
-    green " 2. Caddy Docker部署(缓存支持)"
+    green " 1. Caddy纯净部署" 
+    green " 2. Caddy附带插件"
     yellow " =================================================="
     green " 0. 返回主脚本"
     echo
