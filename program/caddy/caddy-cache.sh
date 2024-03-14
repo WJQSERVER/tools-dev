@@ -73,7 +73,19 @@ cat <<EOF > /root/data/caddy/Caddyfile
 :80 {
 	root * /root/data/caddy/page
 	try_files {path}/index.html
-     file_server
+    file_server
+    cache {
+         allowed_http_verbs GET
+         stale 100s
+         ttl 200s
+    }
+    handle_errors {
+	    rewrite * /{err.status_code}
+	    reverse_proxy https://http.cat {
+		    header_up Host {upstream_hostport}
+	    }
+    }     
+    encode gzip zstd br
 }
 EOF
 
