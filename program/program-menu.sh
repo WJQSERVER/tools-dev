@@ -62,7 +62,7 @@ function serverstatus(){
     wget -O serverstatus.sh ${repo_url}program/serverstatus.sh && chmod +x serverstatus.sh && ./serverstatus.sh
 }
 
-#NAS面板
+#sun-panel面板
 function sun-panel(){
     wget -O sun-panel.sh ${repo_url}program/sun-panel.sh && chmod +x sun-panel.sh && ./sun-panel.sh
 }
@@ -72,9 +72,9 @@ function cat(){
     wget -O cat.sh ${repo_url}program/cat.sh && chmod +x cat.sh && ./cat.sh    
 }
 
-#雷池
-function safeline(){
-    bash -c "$(curl -fsSLk https://waf-ce.chaitin.cn/release/latest/setup.sh)"    
+#one-nav
+function one-nav(){
+    wget -O one-nav.sh ${repo_url}program/one-nav.sh && chmod +x one-nav.sh && ./one-nav.sh
 }
 
 #QB离线下载BT/PT
@@ -163,7 +163,7 @@ function start_menu(){
     green " 6. ADGuard Home 去广告,DNS面板"
     green " 7. ServerStatus探针"
     green " 8. Sun Panel NAS面板"
-    green " 9. 雷池WAF"
+    green " 9. One-NAV导航"
     green " 10.QBittorrent BT/PT下载"
     green " 11.Alist"
     green " 12.ALLTube视频下载"
@@ -205,7 +205,7 @@ function start_menu(){
            sun-panel
         ;;
         9 )
-           safeline 
+           one-nav 
         ;;
         10)
            qbittorrent
