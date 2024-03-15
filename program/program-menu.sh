@@ -32,9 +32,9 @@ function nginxproxymanager(){
     wget -O nginxproxymanager.sh ${repo_url}program/nginxproxymanager.sh && chmod +x nginxproxymanager.sh && ./nginxproxymanager.sh
 }
 
-#portainer
-function portainer(){
-    wget -O portainer.sh ${repo_url}program/portainer.sh && chmod +x portainer.sh && ./portainer.sh
+#Docker管理WEBUI
+function docker_manager_webui(){
+    wget -O docker_manager_webui_menu.sh ${repo_url}program/docker_manager_webui/docker_manager_webui_menu.sh && chmod +x docker_manager_webui_menu.sh && ./docker_manager_webui_menu.sh
 }
 
 #speedtest-x
@@ -137,6 +137,11 @@ function caddy(){
     wget -O caddy-menu.sh ${repo_url}program/caddy/caddy-menu.sh && chmod +x caddy-menu.sh && ./caddy-menu.sh
 }
 
+#聊天机器人
+function chatbot(){
+    wget -O chatbot_menu.sh ${repo_url}program/chatbot/chatbot_menu.sh && chmod +x chatbot_menu.sh && ./chatbot_menu.sh
+}
+
 #返回主脚本
 function back(){
     wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
@@ -151,7 +156,7 @@ function start_menu(){
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
     green " 1. Nginx Proxy Manager 可视化Nginx管理面板"        
-    green " 2. Portainer 可视化Docker管理面板"                  
+    green " 2. Docker管理面板"                  
     green " 3. Speedtest-X 测速面板" 
     green " 4. 青龙面板" 
     green " 5. Uptime-Kuma"
@@ -169,6 +174,7 @@ function start_menu(){
     green " 17.中微子代理"
     green " 18.青龙代挂面板" 
     green " 19.Caddy"
+    green " 20.聊天机器人"
     yellow " =================================================="
     green " 0. 返回主脚本"
     echo
@@ -178,7 +184,7 @@ function start_menu(){
            nginxproxymanager
 	    ;;
         2 )
-	       portainer
+	       docker_manager_webui
         ;;
 	    3 )
            speedtest-x
@@ -230,7 +236,10 @@ function start_menu(){
         ;;
         19)
            caddy
-        ;;         
+        ;;
+        20)
+           chatbot
+        ;;            
         90)
            v2raya
         ;;   
