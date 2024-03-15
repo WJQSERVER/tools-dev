@@ -155,7 +155,7 @@ function start_menu(){
     yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
-    green " 1. Nginx Proxy Manager 可视化Nginx管理面板"        
+    green " 1. Nginx系列&WAF"        
     green " 2. Docker管理面板"                  
     green " 3. Speedtest-X 测速面板" 
     green " 4. 青龙面板" 
