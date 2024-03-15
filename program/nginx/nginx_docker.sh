@@ -56,7 +56,7 @@ sleep 1
 read -p "是否返回菜单?: [Y/n]" choice
 
 if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    echo "back2memu_changeme"
+    wget -O nginx_menu.sh ${repo_url}program/nginx/nginx_menu.sh && chmod +x nginx_menu.sh && ./nginx_menu.sh
 else
     echo "脚本结束"
 fi

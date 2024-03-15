@@ -29,38 +29,13 @@ blue(){
 }
 
 #
-function (){
-
+function koishi(){
+    wget -O koishi.sh ${repo_url}program/chatbot/koishi.sh && chmod +x koishi.sh && ./koishi.sh
 }
 
 #
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
+function ntqq(){
+    wget -O ntqq.sh ${repo_url}program/chatbot/ntqq.sh && chmod +x ntqq.sh && ./ntqq.sh
 }
 
 #返回主脚本
@@ -76,40 +51,19 @@ function start_menu(){
     yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
-    green " 1. " 
-    green " 2. "
-    green " 3. "
-    green " 4. " 
-    green " 5. "
-    green " 6. "
-    green " 7. "
+    green " 1. Koishi" 
+    green " 2. NTQQ"
     yellow " =================================================="
     green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           #
+           koishi
 	    ;;
         2 )
-	       #
+	       ntqq
         ;;
-	    3 )
-           #
-	    ;;
-        4 )
-	       #
-        ;;
-	    5 )
-           #
-	    ;;
-        6 )
-	       #
-        ;;
-	    7 )
-           #
-	    ;;   
-
         0 )
            back
         ;;

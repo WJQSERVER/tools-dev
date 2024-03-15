@@ -29,43 +29,23 @@ blue(){
 }
 
 #
-function (){
+function nginx_docker(){
+    wget -O nginx_docker.sh ${repo_url}program/nginx/nginx_docker.sh && chmod +x nginx_docker.sh && ./nginx_docker.sh
+}
+
+#
+function nginxproxymanager(){
 
 }
 
 #
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
+function safeline(){
 
 }
 
 #返回主脚本
 function back(){
-    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
+    wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
 }
 
 #主菜单
