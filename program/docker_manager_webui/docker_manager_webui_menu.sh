@@ -28,44 +28,24 @@ blue(){
     echo -e "\033[34m\033[01m$1\033[0m"
 }
 
-#
-function (){
-
+#Portainer
+function portainer(){
+    wget -O portainer.sh ${repo_url}program/docker_manager_webui/portainer.sh && chmod +x portainer.sh && ./portainer.sh
 }
 
-#
-function (){
-
+#Dockge
+function dockge(){
+    wget -O dockge.sh ${repo_url}program/docker_manager_webui/dockge.sh && chmod +x dockge.sh && ./dockge.sh
 }
 
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
-}
-
-#
-function (){
-
+#Docker-UI
+function docker-ui(){
+    wget -O docker-ui.sh ${repo_url}program/docker_manager_webui/docker-ui.sh && chmod +x docker-ui.sh && ./docker-ui.sh
 }
 
 #返回主脚本
 function back(){
-    wget -O main.sh ${repo_url}main.sh && chmod +x main.sh && ./main.sh
+    wget -O program-menu.sh ${repo_url}program/program-menu.sh && chmod +x program-menu.sh && ./program-menu.sh
 }
 
 #主菜单
@@ -76,40 +56,23 @@ function start_menu(){
     yellow " FROM: https://github.com/WJQSERVER/tools-dev "
     green " USE:  wget -O tools.sh ${repo_url}tools.sh && chmod +x tools.sh && clear && ./tools.sh "
     yellow " =================================================="
-    green " 1. " 
-    green " 2. "
-    green " 3. "
-    green " 4. " 
-    green " 5. "
-    green " 6. "
-    green " 7. "
+    green " 1. Portainer" 
+    green " 2. Dockge"
+    green " 3. Docker-UI"
     yellow " =================================================="
     green " 0. 返回主脚本"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
         1 )
-           #
+           portainer
 	    ;;
         2 )
-	       #
+	       dockge
         ;;
 	    3 )
-           #
+           docker-ui
 	    ;;
-        4 )
-	       #
-        ;;
-	    5 )
-           #
-	    ;;
-        6 )
-	       #
-        ;;
-	    7 )
-           #
-	    ;;   
-
         0 )
            back
         ;;
