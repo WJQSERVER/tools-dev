@@ -9,30 +9,36 @@ if ! command -v docker >/dev/null || ! command -v docker-compose >/dev/null; the
 fi
 
 # 创建目录
-mkdir -p /root/data/docker_data/nginx
-cd /root/data/docker_data/nginx
+mkdir -p /root/data/docker_data/*
+cd /root/data/docker_data/*
 
 # 从用户输入中获取容器端口
 read -p "请输入容器端口: " PORT
 
 #拉取镜像
-docker pull nginx:latest
+docker pull ghcr.io/librespeed/speedtest:latest
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
-version: '3.9'
+version: '3.7'
 services:
-    nginx:
-        image: 'nginx:latest'
-        volumes:
-            - './html:/usr/share/nginx/html'
-            - './certs:/etc/nginx/certs'
-            - './nginx.conf:/etc/nginx/nginx.conf'
-        ports:
-            - '443:443'
-            - '80:80'
-        container_name: nginx
-
+  librespeed:
+    container_name: librespeedss
+    image: ghcr.io/librespeed/speedtest:latest
+    restart: always
+    environment:
+      MODE: standalone
+      #TITLE: "LibreSpeed"
+      #TELEMETRY: "false"
+      #ENABLE_ID_OBFUSCATION: "false"
+      #REDACT_IP_ADDRESSES: "false"
+      #PASSWORD:
+      #EMAIL:
+      #DISABLE_IPINFO: "false"
+      #DISTANCE: "km"
+      #WEBPORT: 80
+    ports:
+      - "$PORT:80"
 EOF
 
 # 启动容器
@@ -56,7 +62,7 @@ sleep 1
 read -p "是否返回菜单?: [Y/n]" choice
 
 if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    wget -O nginx_menu.sh ${repo_url}program/nginx/nginx_menu.sh && chmod +x nginx_menu.sh && ./nginx_menu.sh
+    echo "back2memu_changeme"
 else
     echo "脚本结束"
 fi

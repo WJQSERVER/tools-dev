@@ -16,7 +16,7 @@ cd /root/data/docker_data/dockge
 read -p "请输入容器端口: " PORT
 
 #拉取镜像
-docker pull #xx/xx:latest
+docker pull louislam/dockge:1
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF

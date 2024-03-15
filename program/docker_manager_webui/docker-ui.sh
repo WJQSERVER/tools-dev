@@ -16,7 +16,7 @@ cd /root/data/docker_data/docker-ui
 read -p "请输入容器端口: " PORT
 
 #拉取镜像
-docker pull #xx/xx:latest
+docker pull joinsunsoft/docker.ui
 
 # 创建 docker-compose.yml 文件
 cat > docker-compose.yml <<EOF
@@ -52,7 +52,7 @@ sleep 1
 read -p "是否返回菜单?: [Y/n]" choice
 
 if [[ "$choice" == "" || "$choice" == "Y" || "$choice" == "y" ]]; then
-    wget -O docker-manager-menu.sh ${repo_url}docker-manager/docker-manager-menu.sh && chmod +x docker-manager-menu.sh && ./docker-manager-menu.sh
+    wget -O docker_manager_webui_menu.sh ${repo_url}program/docker_manager_webui/docker_manager_webui_menu.sh && chmod +x docker_manager_webui_menu.sh && ./docker_manager_webui_menu.sh
 else
     echo "脚本结束"
 fi
