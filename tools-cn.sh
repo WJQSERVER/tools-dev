@@ -11,7 +11,7 @@ echo "当前版本为V.1.0"
 sleep 1
 
 #BETA版
-repo_url="https://gh.1888866.xyz/https://raw.githubusercontent.com/WJQSERVER/tools-dev/BETA/"
+repo_url="https://gh.1888866.xyz/https://raw.githubusercontent.com/WJQSERVER/tools/main/"
 echo "repo_url=$repo_url" > "repo_url.conf"
 
 # 导入配置文件
